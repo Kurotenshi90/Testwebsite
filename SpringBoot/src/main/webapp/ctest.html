@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script type="text/javascript" src="javascript/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="javascript/DataService.js"></script>
+
+<script type="text/javascript">
+$(document).on('submit', '#myform', function(e) {
+	e.preventDefault();
+	var answersctest = new Object();
+
+	answersctest.answersA = getAnswers('questionA');
+	answersctest.answersB = getAnswers('questionB');
+	answersctest.answersC = getAnswers('questionC');
+	answersctest.answersD = getAnswers('questionD');
+	
+	addanswers(answersctest);
+});
+
+</script>
+
+<body onload="formtrue()">
+	<!-- Content -->
+	<div class="w3-content"
+		style="max-width: 1100px; margin-top: 80px; margin-bottom: 80px">
+
+		<div class="w3-center w3-padding-64" id="contact">
+			<span
+				class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Catch me if you can</span>
+		</div>
+		<form id="myform" class="w3-container" target="_blank">
+			<div id="questionA" class="w3-section" style="line-height: 2;">
+				French police are hunting the burglar or burglars who made off with paintings by
+				Picasso, Matisse and other great artists from a Paris museum. 
+				Officials ha<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				admitted t<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				Museum of Modern Art's al<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				system h<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				not be<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				fully funct<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				for ma<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				weeks. O<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				masked intr<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				was spo<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				by secu<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				cameras, clim<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				into t<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				museum thr<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				a bro<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 side win<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				, having c<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				through a ga<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 padlock. T<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 paintings a<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				estimated t<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 be wo<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 just un<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 100m eu<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				. But exp<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				say the thieves would struggle to sell the paintings on the open market because they are so well known. 
+			</div>
+			
+			<div class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Travel to Kenya</span>
+			</div>
+			<div id="questionB" class="w3-section" style="line-height: 2;">
+				Few countries in the world can offer the traveller the variety of landscapes that Kenya can. The cou
+				<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 has moun<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				, grassy pla<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				, sandy bea<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				, coral re<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				and a<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				abundance o<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 wildlife. Kenya appre<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 these nat<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 resources a<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 has s<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 up ov<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 50 nati<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 parks a<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 game rese<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 to pro<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 and man<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 its envir<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				. Tourism h<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 become t<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 major sou<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 of Kenya´s over<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 income. Saf<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 are orga<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 so th<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 tourists can be driven around, usually in seven- or nine-seater minibuses with adjustable roofs to allow easier viewing. Unlike on early safaris, today´s tourists are only allowed to shoot with cameras.
+			</div>
+			
+			<div class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">New test to prepare learners for real world driving</span>
+			</div>
+			<div id="questionC" class="w3-section" style="line-height: 2;">
+				Learner drivers will be required to memorize directions under a new driving test which could see the pass rate fall by a quarter, it emerged today. Test candi
+				<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 will ha<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 to navi<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 to a parti<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 location us<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 only ver<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 instructions fr<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 the exam<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 or b<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 following ro<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 signs. T<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 Driving Standards Agency sa<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 the n<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 section wi<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 promote ‘indep<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 thinking’ a<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 mimic a situ<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 where a dri<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 gets lo<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				. But t<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 agency's o<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 research sugg<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 the cha<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 will ca<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 the pa<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				  rate to fall from 42 to 18 per cent - less than one in five. The changes have received a mixed response from motoring groups, with some saying they make the test too difficult and others praising them for better preparing learners for 'real world' driving.				  
+			</div>
+
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">The road to independence</span>
+			</div>
+			<div id="questionD" class="w3-section" style="line-height: 2;">
+				For the first hundred and sixty years or so of American settlement, there was a close relationship between America and Britain, but it was one that increasingly became filled with tension. Americans be
+				<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 to fe<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 very stro<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 that t<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 British we<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 exploiting th<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 resources a<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 hard wo<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 while prov<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 little o<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 nothing i<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 return. Wh<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 many, b<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 by n<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 means a<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				, Americans we<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 willing un<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 this po<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 to fol<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 the fash<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 and sty<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 of Bri<input id="hi2" style="width: 5%; height: 25px;" required type="text"> 
+				 society, i<input id="hi2"	style="width: 5%; height: 25px;" required type="text"> 				
+				 the eight<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 century Amer<input id="hi2" style="width: 5%; height: 25px;" required type="text">
+				 as a whole became less and less willing to be governed by the British.
+			</div>
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Thank you for filling in the test press send when ready</span>
+			</div>
+			
+			<button type="submit" class="w3-button w3-block w3-black">Send</button>
+		</form>	
+	</div>
+</body>
+</html>

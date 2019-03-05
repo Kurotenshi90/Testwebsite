@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript" src="javascript/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="javascript/DataService.js"></script>
+</head>
+
+<body oncontextmenu="return false">
+
+	<div class="body"></div>
+	<div class="grad"></div>
+	<div class="header">
+		<div style="font-weight: bold;">
+            Test<span>Eng</span>
+        </div>
+		<br>
+	</div>
+	<form name="login">
+		<div class="login">
+			<input type="text" placeholder="Username" name="userid"><br>
+			<input type="password" placeholder="password" name="pswrd"><br>
+			<input type="button" onclick="check(this.form)" value="Login" />
+		</div>
+
+	</form>
+	<script type="text/javascript">
+		function check(form) {
+			var test = login({
+				userName : form.userid.value,
+				passWord : form.pswrd.value
+			},function(data){
+				if (data.bool) {				
+					window.location.href = 'homepage.html'
+				} else {
+					alert("Please ask an admin for the correct login information")
+				}
+			});
+			
+		}
+	</script>
+</body>
+</html>

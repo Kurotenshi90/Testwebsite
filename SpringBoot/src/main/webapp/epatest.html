@@ -1,0 +1,3355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>testlyn</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="css/test2.css">
+<script type="text/javascript" src="javascript/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="javascript/DataService.js"></script>
+<script type="text/javascript">
+$(document).on('submit', '#myform', function(e) {
+	e.preventDefault();
+	function getvalue(input){
+		var string = '';
+	   $("#"+input+" input[type=radio]:checked").each(function() {
+	       var value = $(this).val();
+		   string = string + value + ",";
+	   });
+	   return string;
+	};
+	
+	function getcheckbox(input){
+		var string = ' ';
+	   $("#"+input+" input[type=checkbox]:checked").each(function() {
+	       var value = $(this).val();
+		   string = string + value ;
+	   });
+	   return string;
+	};
+	function makeStringofcheckboxes(){
+		var string = '';
+		for (i = 101; i < 121; i++) { 
+			  string = string + getcheckbox('q' + i) + ','
+		};
+		return string;
+	};
+	
+	
+	var test = makeStringofcheckboxes();
+	
+	var answersepatest = new Object();
+
+	answersepatest.answersA = getvalue("part1").slice(0,-1)
+	answersepatest.answersB = getvalue("part2").slice(0,-1);
+	answersepatest.answersC = getvalue("part3").slice(0,-1);
+	answersepatest.answersD = getvalue("part4").slice(0,-1);
+	answersepatest.answersE = getvalue("part5").slice(0,-1);
+	answersepatest.answersF = makeStringofcheckboxes().slice(0,-1);
+	answersepatest.answersG = getvalue("part7").slice(0,-1);
+	answersepatest.answersH = getvalue("part8").slice(0,-1);
+	
+	addanswersepa(answersepatest);
+});
+
+</script>
+</head>
+<body onload="formtrue()">
+	<!-- Content -->
+	<div class="w3-content"
+		style="max-width: 1100px; margin-top: 80px; margin-bottom: 80px">
+		<form id="myform" class="w3-container" target="_blank">
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-border-dark-grey w3-padding-16">Im Folgenden finden Sie unterschiedliche deutsche W&oumlrter, die Sie ins Englische &uumlbersetzen sollen.
+					Es stehen Ihnen jeweils vier L&oumlsungsmglichkeiten zur Verf&uumlgung. W&aumlhlen Sie die L&oumlsung, welche Ihrer Meinung nach die richtige ist.
+				</span>
+			</div>
+			<div id="part1" style="font-family:Arial;">
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">1.  Fenster:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="1a" name="radioFruit" value="a" required>
+					    <label for="1a">car</label>
+					
+					    <input type="radio" id="1b" name="radioFruit" value="b" required>
+					    <label for="1b">chat</label>
+					
+					    <input type="radio" id="1c" name="radioFruit" value="c" required>
+					    <label for="1c">window</label>
+					    
+					    <input type="radio" id="1d" name="radioFruit" value="d" required>
+					    <label for="1d">house</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">2. Lied:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="2a" name="radioFruit2" value="a" required>
+					    <label for="2a">air</label>
+					
+					    <input type="radio" id="2b" name="radioFruit2" value="b" required>
+					    <label for="2b">note</label>
+					
+					    <input type="radio" id="2c" name="radioFruit2" value="c" required>
+					    <label for="2c">song</label>
+					    
+					    <input type="radio" id="2d" name="radioFruit2" value="d" required>
+					    <label for="2d">music</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">3. Vogel:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="3a" name="radioFruit3" value="a" required>
+					    <label for="3a">tree</label>
+					
+					    <input type="radio" id="3b" name="radioFruit3" value="b" required>
+					    <label for="3b">bird</label>
+					
+					    <input type="radio" id="3c" name="radioFruit3" value="c" required>
+					    <label for="3c">room</label>
+					    
+					    <input type="radio" id="3d" name="radioFruit3" value="d" required>
+					    <label for="3d">book</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">4. Loch:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="4a" name="radioFruit4" value="a" required>
+					    <label for="4a">chair</label>
+					
+					    <input type="radio" id="4b" name="radioFruit4" value="b" required>
+					    <label for="4b">box</label>
+					
+					    <input type="radio" id="4c" name="radioFruit4" value="c" required>
+					    <label for="4c">stick</label>
+					    
+					    <input type="radio" id="4d" name="radioFruit4" value="d" required>
+					    <label for="4d">hole</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">5. Stern:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="5a" name="radioFruit5" value="a" required>
+					    <label for="5a">light</label>
+					
+					    <input type="radio" id="5b" name="radioFruit5" value="b" required>
+					    <label for="5b">star</label>
+					
+					    <input type="radio" id="5c" name="radioFruit5" value="c" required>
+					    <label for="5c">bridge</label>
+					    
+					    <input type="radio" id="5d" name="radioFruit5" value="d" required>
+					    <label for="5d">heaven</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">6. Hochzeit<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="6a" name="radioFruit6" value="a" required>
+					    <label for="6a">wedding</label>
+					
+					    <input type="radio" id="6b" name="radioFruit6" value="b" required>
+					    <label for="6b">meeting</label>
+					
+					    <input type="radio" id="6c" name="radioFruit6" value="c" required>
+					    <label for="6c">funeral</label>
+					    
+					    <input type="radio" id="6d" name="radioFruit6" value="d" required>
+					    <label for="6d">gratulation</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">7. Fahrt:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="7a" name="radioFruit7" value="a" required>
+					    <label for="7a">stall</label>
+					
+					    <input type="radio" id="7b" name="radioFruit7" value="b" required>
+					    <label for="7b">ride</label>
+					
+					    <input type="radio" id="7c" name="radioFruit7" value="c" required>
+					    <label for="7c">ferry</label>
+					    
+					    <input type="radio" id="7d" name="radioFruit7" value="d" required>
+					    <label for="7d">sink</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">8. Roller:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="8a" name="radioFruit8" value="a" required>
+					    <label for="8a">rule</label>
+					
+					    <input type="radio" id="8b" name="radioFruit8" value="b" required>
+					    <label for="8b">scooter</label>
+					
+					    <input type="radio" id="8c" name="radioFruit8" value="c" required>
+					    <label for="8c">rolling</label>
+					    
+					    <input type="radio" id="8d" name="radioFruit8" value="d" required>
+					    <label for="8d">riddle</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">9. Reifen:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="9a" name="radioFruit9" value="a" required>
+					    <label for="9a">tire</label>
+					
+					    <input type="radio" id="9b" name="radioFruit9" value="b" required>
+					    <label for="9b">hose</label>
+					
+					    <input type="radio" id="9c" name="radioFruit9" value="c" required>
+					    <label for="9c">cap</label>
+					    
+					    <input type="radio" id="9d" name="radioFruit9" value="d" required>
+					    <label for="9d">cord</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">10. Paket:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="10a" name="radioFruit10" value="a" required>
+					    <label for="10a">tomb</label>
+					
+					    <input type="radio" id="10b" name="radioFruit10" value="b" required>
+					    <label for="10b">letter</label>
+					
+					    <input type="radio" id="10c" name="radioFruit10" value="c" required>
+					    <label for="10c">bridge</label>
+					    
+					    <input type="radio" id="10d" name="radioFruit10" value="d" required>
+					    <label for="10d">parcel</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">11. Schuld:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="11a" name="radioFruit11" value="a" required>
+					    <label for="11a">guilt</label>
+					
+					    <input type="radio" id="11b" name="radioFruit11" value="b" required>
+					    <label for="11b">fowl</label>
+					
+					    <input type="radio" id="11c" name="radioFruit11" value="c" required>
+					    <label for="11c">denote</label>
+					    
+					    <input type="radio" id="11d" name="radioFruit11" value="d" required>
+					    <label for="11d">foul</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">12. Fleck:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="12a" name="radioFruit12" value="a" required>
+					    <label for="12a">crash</label>
+					
+					    <input type="radio" id="12b" name="radioFruit12" value="b" required>
+					    <label for="12b">pain</label>
+					
+					    <input type="radio" id="12c" name="radioFruit12" value="c" required>
+					    <label for="12c">spot</label>
+					    
+					    <input type="radio" id="12d" name="radioFruit12" value="d" required>
+					    <label for="12d">stamp</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">13. Decke:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="13a" name="radioFruit13" value="a" required>
+					    <label for="13a">blank</label>
+					
+					    <input type="radio" id="13b" name="radioFruit13" value="b" required>
+					    <label for="13b">decode</label>
+					
+					    <input type="radio" id="13c" name="radioFruit13" value="c" required>
+					    <label for="13c">deck</label>
+					    
+					    <input type="radio" id="13d" name="radioFruit13" value="d" required>
+					    <label for="13d">blanket</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">14. Hütte:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="14a" name="radioFruit14" value="a" required>
+					    <label for="14a">hood</label>
+					
+					    <input type="radio" id="14b" name="radioFruit14" value="b" required>
+					    <label for="14b">ground</label>
+					
+					    <input type="radio" id="14c" name="radioFruit14" value="c" required>
+					    <label for="14c">cottage</label>
+					    
+					    <input type="radio" id="14d" name="radioFruit14" value="d" required>
+					    <label for="14d">stable</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">15. Schurke:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="15a" name="radioFruit15" value="a" required>
+					    <label for="15a">scoundrel</label>
+					
+					    <input type="radio" id="15b" name="radioFruit15" value="b" required>
+					    <label for="15b">scan</label>
+					
+					    <input type="radio" id="15c" name="radioFruit15" value="c" required>
+					    <label for="15c">scape</label>
+					    
+					    <input type="radio" id="15d" name="radioFruit15" value="d" required>
+					    <label for="15d">scale</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">16. Schlange:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="16a" name="radioFruit16" value="a" required>
+					    <label for="16a">queen</label>
+					
+					    <input type="radio" id="16b" name="radioFruit16" value="b" required>
+					    <label for="16b">queue</label>
+					
+					    <input type="radio" id="16c" name="radioFruit16" value="c" required>
+					    <label for="16c">quest</label>
+					    
+					    <input type="radio" id="16d" name="radioFruit16" value="d" required>
+					    <label for="16d">quench</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">17. Pflug:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="17a" name="radioFruit17" value="a" required>
+					    <label for="17a">flog</label>
+					
+					    <input type="radio" id="17b" name="radioFruit17" value="b" required>
+					    <label for="17b">plump</label>
+					
+					    <input type="radio" id="17c" name="radioFruit17" value="c" required>
+					    <label for="17c">flock</label>
+					    
+					    <input type="radio" id="17d" name="radioFruit17" value="d" required>
+					    <label for="17d">plough</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">18. Versand:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="18a" name="radioFruit18" value="a" required>
+					    <label for="18a">sander</label>
+					
+					    <input type="radio" id="18b" name="radioFruit18" value="b" required>
+					    <label for="18b">versant</label>
+					
+					    <input type="radio" id="18c" name="radioFruit18" value="c" required>
+					    <label for="18c">dispatch</label>
+					    
+					    <input type="radio" id="18d" name="radioFruit18" value="d" required>
+					    <label for="18d">sender</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">19. Stoß:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="19a" name="radioFruit19" value="a" required>
+					    <label for="19a">staff</label>
+					
+					    <input type="radio" id="19b" name="radioFruit19" value="b" required>
+					    <label for="19b">shove</label>
+					
+					    <input type="radio" id="19c" name="radioFruit19" value="c" required>
+					    <label for="19c">stoup</label>
+					    
+					    <input type="radio" id="19d" name="radioFruit19" value="d" required>
+					    <label for="19d">jet</label>  
+					</div>	
+				</div>				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">20. Verschmelzung:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="20a" name="radioFruit20" value="a" required>
+					    <label for="20a">zipper</label>
+					
+					    <input type="radio" id="20b" name="radioFruit20" value="b" required>
+					    <label for="20b">merger</label>
+					
+					    <input type="radio" id="20c" name="radioFruit20" value="c" required>
+					    <label for="20c">smelting</label>
+					    
+					    <input type="radio" id="20d" name="radioFruit20" value="d" required>
+					    <label for="20d">connection</label>  
+					</div>	
+				</div>
+			</div>
+			
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-border-dark-grey w3-padding-16">Es werden Ihnen drei W&oumlrter vorgegeben. Zwischen dem ersten und zweiten besteht eine gewisse Beziehung.
+					Zwischen dem dritten und einem der f&uumlnf Wahlw&oumlrter besteht eine &aumlhnliche Beziehung. Dieses Wort sollen Sie finden.</span>
+			</div>
+			<div id="part2" style="font-family:Arial;">
+			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">21. easy : hard = cheap : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="21a" name="radioFruit21" value="a" required>
+					    <label for="21a">favorable</label>
+					
+					    <input type="radio" id="21b" name="radioFruit21" value="b" required>
+					    <label for="21b">expensive</label>
+					
+					    <input type="radio" id="21c" name="radioFruit21" value="c" required>
+					    <label for="21c">never</label>
+					    
+					    <input type="radio" id="21d" name="radioFruit21" value="d" required>
+					    <label for="21d">seldom</label>
+					    
+					    <input type="radio" id="21e" name="radioFruit21" value="e" required>
+					    <label for="21e">often</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">22. day : sun = night : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="22a" name="radioFruit22" value="a" required>
+					    <label for="22a">bed</label>
+					
+					    <input type="radio" id="22b" name="radioFruit22" value="b" required>
+					    <label for="22b">moon</label>
+					
+					    <input type="radio" id="22c" name="radioFruit22" value="c" required>
+					    <label for="22c">star</label>
+					    
+					    <input type="radio" id="22d" name="radioFruit22" value="d" required>
+					    <label for="22d">sleep</label>
+					    
+					    <input type="radio" id="22e" name="radioFruit22" value="e" required>
+					    <label for="22e">dream</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">23. artist: painting = singer : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="23a" name="radioFruit23" value="a" required>
+					    <label for="23a">contest</label>
+					
+					    <input type="radio" id="23b" name="radioFruit23" value="b" required>
+					    <label for="23b">challenge</label>
+					
+					    <input type="radio" id="23c" name="radioFruit23" value="c" required>
+					    <label for="23c">picture</label>
+					    
+					    <input type="radio" id="23d" name="radioFruit23" value="d" required>
+					    <label for="23d">song</label>
+					    
+					    <input type="radio" id="23e" name="radioFruit23" value="e" required>
+					    <label for="23e">defeat</label>      
+					</div>	
+				</div>			
+			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">24. iron : hard = butter : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="24a" name="radioFruit24" value="a" required>
+					    <label for="24a">nutrient</label>
+					
+					    <input type="radio" id="24b" name="radioFruit24" value="b" required>
+					    <label for="24b">bright</label>
+					
+					    <input type="radio" id="24c" name="radioFruit24" value="c" required>
+					    <label for="24c">soft</label>
+					    
+					    <input type="radio" id="24d" name="radioFruit24" value="d" required>
+					    <label for="24d">fit</label> 
+					    
+					    <input type="radio" id="24e" name="radioFruit24" value="e" required>
+					    <label for="24e">yellow</label>     
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">25. tongue : taste = nose : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="25a" name="radioFruit25" value="a" required>
+					    <label for="25a">sense</label>
+					
+					    <input type="radio" id="25b" name="radioFruit25" value="b" required>
+					    <label for="25b">sound</label>
+					
+					    <input type="radio" id="25c" name="radioFruit25" value="c" required>
+					    <label for="25c">smell</label>
+					    
+					    <input type="radio" id="25d" name="radioFruit25" value="d" required>
+					    <label for="25d">emotion</label>
+					    
+					    <input type="radio" id="25e" name="radioFruit25" value="e" required>
+					    <label for="25e">sight</label>      
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">26. coat: long = blouse : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="26a" name="radioFruit26" value="a" required>
+					    <label for="26a">comfortable</label>
+					
+					    <input type="radio" id="26b" name="radioFruit26" value="b" required>
+					    <label for="26b">warm</label>
+					
+					    <input type="radio" id="26c" name="radioFruit26" value="c" required>
+					    <label for="26c">mild</label>
+					    
+					    <input type="radio" id="26d" name="radioFruit26" value="d" required>
+					    <label for="26d">short</label>
+					    
+					    <input type="radio" id="26e" name="radioFruit26" value="e" required>
+					    <label for="26e">easy</label>      
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">27. page : book = letter : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="27a" name="radioFruit27" value="a" required>
+					    <label for="27a">heading</label>
+					
+					    <input type="radio" id="27b" name="radioFruit27" value="b" required>
+					    <label for="27b">word</label>
+					
+					    <input type="radio" id="27c" name="radioFruit27" value="c" required>
+					    <label for="27c">content</label>
+					    
+					    <input type="radio" id="27d" name="radioFruit27" value="d" required>
+					    <label for="27d">chapter</label>
+					    
+					    <input type="radio" id="27e" name="radioFruit27" value="e" required>
+					    <label for="27e">poem</label>      
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">28. death : decease = birth : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="28a" name="radioFruit28" value="a" required>
+					    <label for="28a">cry</label>
+					
+					    <input type="radio" id="28b" name="radioFruit28" value="b" required>
+					    <label for="28b">sleep</label>
+					
+					    <input type="radio" id="28c" name="radioFruit28" value="c" required>
+					    <label for="28c">alive</label>
+					    
+					    <input type="radio" id="28d" name="radioFruit28" value="d" required>
+					    <label for="28d">stay</label>
+					    
+					    <input type="radio" id="28e" name="radioFruit28" value="e" required>
+					    <label for="28e">gain</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">29. round : rectangular = circle : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="29a" name="radioFruit29" value="a" required>
+					    <label for="29a">triangle</label>
+					
+					    <input type="radio" id="29b" name="radioFruit29" value="b" required>
+					    <label for="29b">square</label>
+					
+					    <input type="radio" id="29c" name="radioFruit29" value="c" required>
+					    <label for="29c">sexangle</label>
+					    
+					    <input type="radio" id="29d" name="radioFruit29" value="d" required>
+					    <label for="29d">angle</label>
+					    
+					    <input type="radio" id="29e" name="radioFruit29" value="e" required>
+					    <label for="29e">cone</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">30. tree : branch = man : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="30a" name="radioFruit30" value="a" required>
+					    <label for="30a">arm</label>
+					
+					    <input type="radio" id="30b" name="radioFruit30" value="b" required>
+					    <label for="30b">limb</label>
+					
+					    <input type="radio" id="30c" name="radioFruit30" value="c" required>
+					    <label for="30c">leg</label>
+					    
+					    <input type="radio" id="30d" name="radioFruit30" value="d" required>
+					    <label for="30d">head</label>
+					    
+					    <input type="radio" id="30e" name="radioFruit30" value="e" required>
+					    <label for="30e">neck</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">31. house : door = channel : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="31a" name="radioFruit31" value="a" required>
+					    <label for="31a">window</label>
+					
+					    <input type="radio" id="31b" name="radioFruit31" value="b" required>
+					    <label for="31b">entrance</label>
+					
+					    <input type="radio" id="31c" name="radioFruit31" value="c" required>
+					    <label for="31c">shore</label>
+					    
+					    <input type="radio" id="31d" name="radioFruit31" value="d" required>
+					    <label for="31d">lake</label> 
+					    
+					    <input type="radio" id="31e" name="radioFruit31" value="e" required>
+					    <label for="31e">basement</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">32. liberal: radical = moderate : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="32a" name="radioFruit32" value="a" required>
+					    <label for="32a">tolerant</label>
+					
+					    <input type="radio" id="32b" name="radioFruit32" value="b" required>
+					    <label for="32b">committed</label>
+					
+					    <input type="radio" id="32c" name="radioFruit32" value="c" required>
+					    <label for="32c">extreme</label>
+					    
+					    <input type="radio" id="32d" name="radioFruit32" value="d" required>
+					    <label for="32d">kind</label> 
+					    
+					    <input type="radio" id="32e" name="radioFruit32" value="e" required>
+					    <label for="32e">compensative</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">33. food : spice = lecture : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="33a" name="radioFruit33" value="a" required>
+					    <label for="33a">affront</label>
+					
+					    <input type="radio" id="33b" name="radioFruit33" value="b" required>
+					    <label for="33b">speech</label>
+					
+					    <input type="radio" id="33c" name="radioFruit33" value="c" required>
+					    <label for="33c">humour</label>
+					    
+					    <input type="radio" id="33d" name="radioFruit33" value="d" required>
+					    <label for="33d">address</label>
+					    
+					    <input type="radio" id="33e" name="radioFruit33" value="e" required>
+					    <label for="33e">classification</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">34. flood : bank = rain : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="34a" name="radioFruit34" value="a" required>
+					    <label for="34a">humidity</label>
+					
+					    <input type="radio" id="34b" name="radioFruit34" value="b" required>
+					    <label for="34b">water</label>
+					
+					    <input type="radio" id="34c" name="radioFruit34" value="c" required>
+					    <label for="34c">ice</label>
+					    
+					    <input type="radio" id="34d" name="radioFruit34" value="d" required>
+					    <label for="34d">drop</label>
+					    
+					    <input type="radio" id="34e" name="radioFruit34" value="e" required>
+					    <label for="34e">umbrella</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">35. discus : throw = crossbar : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="35a" name="radioFruit35" value="a" required>
+					    <label for="35a">march</label>
+					
+					    <input type="radio" id="35b" name="radioFruit35" value="b" required>
+					    <label for="35b">fall</label>
+					
+					    <input type="radio" id="35c" name="radioFruit35" value="c" required>
+					    <label for="35c">catch</label>
+					    
+					    <input type="radio" id="35d" name="radioFruit35" value="d" required>
+					    <label for="35d">swim</label> 
+					    
+					    <input type="radio" id="35e" name="radioFruit35" value="e" required>
+					    <label for="35e">jump</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">36. curiosity : discovery = practice : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="36a" name="radioFruit36" value="a" required>
+					    <label for="36a">hope</label>
+					
+					    <input type="radio" id="36b" name="radioFruit36" value="b" required>
+					    <label for="36b">progress</label>
+					
+					    <input type="radio" id="36c" name="radioFruit36" value="c" required>
+					    <label for="36c">trail</label>
+					    
+					    <input type="radio" id="36d" name="radioFruit36" value="d" required>
+					    <label for="36d">intention</label>
+					    
+					    <input type="radio" id="36e" name="radioFruit36" value="e" required>
+					    <label for="36e">goal</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">37. teacher: school = mayor : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="37a" name="radioFruit37" value="a" required>
+					    <label for="37a">building</label>
+					
+					    <input type="radio" id="37b" name="radioFruit37" value="b" required>
+					    <label for="37b">government</label>
+					
+					    <input type="radio" id="37c" name="radioFruit37" value="c" required>
+					    <label for="37c">house</label>
+					    
+					    <input type="radio" id="37d" name="radioFruit37" value="d" required>
+					    <label for="37d">city hall</label>
+					    
+					    <input type="radio" id="37e" name="radioFruit37" value="e" required>
+					    <label for="37e">castle</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">38. sawing : gluing = sieving : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="38a" name="radioFruit38" value="a" required>
+					    <label for="38a">mixing</label>
+					
+					    <input type="radio" id="38b" name="radioFruit38" value="b" required>
+					    <label for="38b">brazing</label>
+					
+					    <input type="radio" id="38c" name="radioFruit38" value="c" required>
+					    <label for="38c">founding</label>
+					    
+					    <input type="radio" id="38d" name="radioFruit38" value="d" required>
+					    <label for="38d">breaking</label>
+					    
+					    <input type="radio" id="38e" name="radioFruit38" value="e" required>
+					    <label for="38e">filtering</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">39. sportsman : success = manager: ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="39a" name="radioFruit39" value="a" required>
+					    <label for="39a">luxury</label>
+					
+					    <input type="radio" id="39b" name="radioFruit39" value="b" required>
+					    <label for="39b">assistant</label>
+					
+					    <input type="radio" id="39c" name="radioFruit39" value="c" required>
+					    <label for="39c">company</label>
+					    
+					    <input type="radio" id="39d" name="radioFruit39" value="d" required>
+					    <label for="39d">volume</label>
+					    
+					    <input type="radio" id="39e" name="radioFruit39" value="e" required>
+					    <label for="39e">esteem</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">40. fun : benefit = grief : ?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="40a" name="radioFruit40" value="a" required>
+					    <label for="40a">pleasure</label>
+					
+					    <input type="radio" id="40b" name="radioFruit40" value="b" required>
+					    <label for="40b">trouble</label>
+					
+					    <input type="radio" id="40c" name="radioFruit40" value="c" required>
+					    <label for="40c">mood</label>
+					    
+					    <input type="radio" id="40d" name="radioFruit40" value="d" required>
+					    <label for="40d">anger</label>
+					    
+					    <input type="radio" id="40e" name="radioFruit40" value="e" required>
+					    <label for="40e">loss</label>    
+					</div>	
+				</div>															
+			</div>
+			
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-border-dark-grey w3-padding-16">Im Folgenden finden Sie, wie in der letzten Aufgabe, mehrere unterschiedliche W&oumlrter, von denen jeweils eines in einen der n&aumlchsten S&aumltze passt. 
+					Ordnen Sie wiederum diese W&oumlrter zu. Es stehen Ihnen jeweils f&uumlnf L&oumlsungsm&oumlglichkeiten zur Verf&uumlgung. W&aumlhlen Sie diese L&oumlsung, welche Ihrer Meinung nach die richtige ist.</span>
+			</div>
+			<div id="part3" style="font-family:Arial;">
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">41. It is ten o’clock, and I... very tired.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="41a" name="radioFruit41" value="a" required>
+					    <label for="41a">is</label>
+					
+					    <input type="radio" id="41b" name="radioFruit41" value="b" required>
+					    <label for="41b">was</label>
+					
+					    <input type="radio" id="41c" name="radioFruit41" value="c" required>
+					    <label for="41c">were</label>
+					    
+					    <input type="radio" id="41d" name="radioFruit41" value="d" required>
+					    <label for="41d">am</label>
+					    
+					    <input type="radio" id="41e" name="radioFruit41" value="e" required>
+					    <label for="41e">are</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">42. I think you ... tired too, aren’t you?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="42a" name="radioFruit42" value="a" required>
+					    <label for="42a">was</label>
+					
+					    <input type="radio" id="42b" name="radioFruit42" value="b" required>
+					    <label for="42b">were</label>
+					
+					    <input type="radio" id="42c" name="radioFruit42" value="c" required>
+					    <label for="42c">am</label>
+					    
+					    <input type="radio" id="42d" name="radioFruit42" value="d" required>
+					    <label for="42d">are</label>
+					    
+					    <input type="radio" id="42e" name="radioFruit42" value="e" required>
+					    <label for="42e">is</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">43. No, I... not tired yet.BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="43a" name="radioFruit43" value="a" required>
+					    <label for="43a">were</label>
+					
+					    <input type="radio" id="43b" name="radioFruit43" value="b" required>
+					    <label for="43b">am</label>
+					
+					    <input type="radio" id="43c" name="radioFruit43" value="c" required>
+					    <label for="43c">are</label>
+					    
+					    <input type="radio" id="43d" name="radioFruit43" value="d" required>
+					    <label for="43d">is</label>
+					    
+					    <input type="radio" id="43e" name="radioFruit43" value="e" required>
+					    <label for="43e">was</label>      
+					</div>	
+				</div>			
+			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">44. Oh, yesterday, I... in Tommy’s room with them.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="44a" name="radioFruit44" value="a" required>
+					    <label for="44a">am</label>
+					
+					    <input type="radio" id="44b" name="radioFruit44" value="b" required>
+					    <label for="44b">are</label>
+					
+					    <input type="radio" id="44c" name="radioFruit44" value="c" required>
+					    <label for="44c">is</label>
+					    
+					    <input type="radio" id="44d" name="radioFruit44" value="d" required>
+					    <label for="44d">was</label> 
+					    
+					    <input type="radio" id="44e" name="radioFruit44" value="e" required>
+					    <label for="44e">were</label>     
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">45. At the moment I... just reading a funny book.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="45a" name="radioFruit45" value="a" required>
+					    <label for="45a">are</label>
+					
+					    <input type="radio" id="45b" name="radioFruit45" value="b" required>
+					    <label for="45b">is</label>
+					
+					    <input type="radio" id="45c" name="radioFruit45" value="c" required>
+					    <label for="45c">was</label>
+					    
+					    <input type="radio" id="45d" name="radioFruit45" value="d" required>
+					    <label for="45d">were</label>
+					    
+					    <input type="radio" id="45e" name="radioFruit45" value="e" required>
+					    <label for="45e">am</label>      
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">46. Where... you half an hour ago?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="46a" name="radioFruit46" value="a" required>
+					    <label for="46a">is</label>
+					
+					    <input type="radio" id="46b" name="radioFruit46" value="b" required>
+					    <label for="46b">was</label>
+					
+					    <input type="radio" id="46c" name="radioFruit46" value="c" required>
+					    <label for="46c">where</label>
+					    
+					    <input type="radio" id="46d" name="radioFruit46" value="d" required>
+					    <label for="46d">am</label>
+					    
+					    <input type="radio" id="46e" name="radioFruit46" value="e" required>
+					    <label for="46e">are</label>      
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">47. When I had a look you ... not in the living-room and not in the kitchen.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="47a" name="radioFruit47" value="a" required>
+					    <label for="47a">was</label>
+					
+					    <input type="radio" id="47b" name="radioFruit47" value="b" required>
+					    <label for="47b">were</label>
+					
+					    <input type="radio" id="47c" name="radioFruit47" value="c" required>
+					    <label for="47c">am </label>
+					    
+					    <input type="radio" id="47d" name="radioFruit47" value="d" required>
+					    <label for="47d">are</label>
+					    
+					    <input type="radio" id="47e" name="radioFruit47" value="e" required>
+					    <label for="47e">is</label>      
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">48. And where ... the children yesterday?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="48a" name="radioFruit48" value="a" required>
+					    <label for="48a">were</label>
+					
+					    <input type="radio" id="48b" name="radioFruit48" value="b" required>
+					    <label for="48b">am</label>
+					
+					    <input type="radio" id="48c" name="radioFruit48" value="c" required>
+					    <label for="48c">are</label>
+					    
+					    <input type="radio" id="48d" name="radioFruit48" value="d" required>
+					    <label for="48d">is</label>
+					    
+					    <input type="radio" id="48e" name="radioFruit48" value="e" required>
+					    <label for="48e">was</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">49. When i entered his room, he ... already asleep. <BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="49a" name="radioFruit49" value="a" required>
+					    <label for="49a">am</label>
+					
+					    <input type="radio" id="49b" name="radioFruit49" value="b" required>
+					    <label for="49b">are</label>
+					
+					    <input type="radio" id="49c" name="radioFruit49" value="c" required>
+					    <label for="49c">is</label>
+					    
+					    <input type="radio" id="49d" name="radioFruit49" value="d" required>
+					    <label for="49d">was</label>
+					    
+					    <input type="radio" id="49e" name="radioFruit49" value="e" required>
+					    <label for="49e">were</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">50. Where ... you staying yesterday evening?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="50a" name="radioFruit50" value="a" required>
+					    <label for="50a">are</label>
+					
+					    <input type="radio" id="50b" name="radioFruit50" value="b" required>
+					    <label for="50b">is</label>
+					
+					    <input type="radio" id="50c" name="radioFruit50" value="c" required>
+					    <label for="50c">was</label>
+					    
+					    <input type="radio" id="50d" name="radioFruit50" value="d" required>
+					    <label for="50d">where</label>
+					    
+					    <input type="radio" id="50e" name="radioFruit50" value="e" required>
+					    <label for="50e">am</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">51. Yesterday I was ... the garden.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="51a" name="radioFruit51" value="a" required>
+					    <label for="51a">with</label>
+					
+					    <input type="radio" id="51b" name="radioFruit51" value="b" required>
+					    <label for="51b">by</label>
+					
+					    <input type="radio" id="51c" name="radioFruit51" value="c" required>
+					    <label for="51c">for</label>
+					    
+					    <input type="radio" id="51d" name="radioFruit51" value="d" required>
+					    <label for="51d">in</label> 
+					    
+					    <input type="radio" id="51e" name="radioFruit51" value="e" required>
+					    <label for="51e">at</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">52. You go to school... bus.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="52a" name="radioFruit52" value="a" required>
+					    <label for="52a">by</label>
+					
+					    <input type="radio" id="52b" name="radioFruit52" value="b" required>
+					    <label for="52b">for</label>
+					
+					    <input type="radio" id="52c" name="radioFruit52" value="c" required>
+					    <label for="52c">in</label>
+					    
+					    <input type="radio" id="52d" name="radioFruit52" value="d" required>
+					    <label for="52d">at</label> 
+					    
+					    <input type="radio" id="52e" name="radioFruit52" value="e" required>
+					    <label for="52e">with</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">53. I thanked him ... the present he gave me.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="53a" name="radioFruit53" value="a" required>
+					    <label for="53a">for</label>
+					
+					    <input type="radio" id="53b" name="radioFruit53" value="b" required>
+					    <label for="53b">in</label>
+					
+					    <input type="radio" id="53c" name="radioFruit53" value="c" required>
+					    <label for="53c">at</label>
+					    
+					    <input type="radio" id="53d" name="radioFruit53" value="d" required>
+					    <label for="53d">with</label>
+					    
+					    <input type="radio" id="53e" name="radioFruit53" value="e" required>
+					    <label for="53e">by</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">54. I like tea ... sugar.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="54a" name="radioFruit54" value="a" required>
+					    <label for="54a">in</label>
+					
+					    <input type="radio" id="54b" name="radioFruit54" value="b" required>
+					    <label for="54b">at</label>
+					
+					    <input type="radio" id="54c" name="radioFruit54" value="c" required>
+					    <label for="54c">with</label>
+					    
+					    <input type="radio" id="54d" name="radioFruit54" value="d" required>
+					    <label for="54d">by</label>
+					    
+					    <input type="radio" id="54e" name="radioFruit54" value="e" required>
+					    <label for="54e">for</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">55. This is the right day... <BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="55a" name="radioFruit55" value="a" required>
+					    <label for="55a">at</label>
+					
+					    <input type="radio" id="55b" name="radioFruit55" value="b" required>
+					    <label for="55b">with</label>
+					
+					    <input type="radio" id="55c" name="radioFruit55" value="c" required>
+					    <label for="55c">by</label>
+					    
+					    <input type="radio" id="55d" name="radioFruit55" value="d" required>
+					    <label for="55d">for</label> 
+					    
+					    <input type="radio" id="55e" name="radioFruit55" value="e" required>
+					    <label for="55e">in</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">56. My sister comes home ... her friend.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="56a" name="radioFruit56" value="a" required>
+					    <label for="56a">with</label>
+					
+					    <input type="radio" id="56b" name="radioFruit56" value="b" required>
+					    <label for="56b">by</label>
+					
+					    <input type="radio" id="56c" name="radioFruit56" value="c" required>
+					    <label for="56c">for</label>
+					    
+					    <input type="radio" id="56d" name="radioFruit56" value="d" required>
+					    <label for="56d">in</label>
+					    
+					    <input type="radio" id="56e" name="radioFruit56" value="e" required>
+					    <label for="56e">at</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">57. l’ll go... train to London.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="57a" name="radioFruit57" value="a" required>
+					    <label for="57a">by</label>
+					
+					    <input type="radio" id="57b" name="radioFruit57" value="b" required>
+					    <label for="57b">for</label>
+					
+					    <input type="radio" id="57c" name="radioFruit57" value="c" required>
+					    <label for="57c">in</label>
+					    
+					    <input type="radio" id="57d" name="radioFruit57" value="d" required>
+					    <label for="57d">at</label>
+					    
+					    <input type="radio" id="57e" name="radioFruit57" value="e" required>
+					    <label for="57e">with</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">58. Steve was very satisfïed ... Tommy’s haircut.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="58a" name="radioFruit58" value="a" required>
+					    <label for="58a">for</label>
+					
+					    <input type="radio" id="58b" name="radioFruit58" value="b" required>
+					    <label for="58b">in</label>
+					
+					    <input type="radio" id="58c" name="radioFruit58" value="c" required>
+					    <label for="58c">at</label>
+					    
+					    <input type="radio" id="58d" name="radioFruit58" value="d" required>
+					    <label for="58d">with</label>
+					    
+					    <input type="radio" id="58e" name="radioFruit58" value="e" required>
+					    <label for="58e">by</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">59. Please take the kite ... a moment.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="59a" name="radioFruit59" value="a" required>
+					    <label for="59a">in</label>
+					
+					    <input type="radio" id="59b" name="radioFruit59" value="b" required>
+					    <label for="59b">at</label>
+					
+					    <input type="radio" id="59c" name="radioFruit59" value="c" required>
+					    <label for="59c">with</label>
+					    
+					    <input type="radio" id="59d" name="radioFruit59" value="d" required>
+					    <label for="59d">by</label>
+					    
+					    <input type="radio" id="59e" name="radioFruit59" value="e" required>
+					    <label for="59e">for</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">60. You must not be late... school.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="60a" name="radioFruit60" value="a" required>
+					    <label for="60a">at</label>
+					
+					    <input type="radio" id="60b" name="radioFruit60" value="b" required>
+					    <label for="60b">with</label>
+					
+					    <input type="radio" id="60c" name="radioFruit60" value="c" required>
+					    <label for="60c">by</label>
+					    
+					    <input type="radio" id="60d" name="radioFruit60" value="d" required>
+					    <label for="60d">for</label>
+					    
+					    <input type="radio" id="60e" name="radioFruit60" value="e" required>
+					    <label for="60e">in</label>    
+					</div>	
+				</div>	
+			</div>
+						
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-border-dark-grey w3-padding-16"> Auch in der n&aumlchsten Aufgabe geht es wieder darum, aus unterschiedlichen Antwortm&oumlglichkeiten diejenige herauszusuchen,
+					die richtig ist. Es stehen Ihnen jeweils f&uumlnf Antwortmglichkeiten zur Verf&uumlgung.
+				</span>
+			</div>
+			<div id="part4" style="font-family:Arial;">
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">61. Tom and Jerry ... to 5th Avenue by car.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="61a" name="radioFruit61" value="a" required>
+					    <label for="61a">walk</label>
+					
+					    <input type="radio" id="61b" name="radioFruit61" value="b" required>
+					    <label for="61b">cycle</label>
+					
+					    <input type="radio" id="61c" name="radioFruit61" value="c" required>
+					    <label for="61c">push</label>
+					    
+					    <input type="radio" id="61d" name="radioFruit61" value="d" required>
+					    <label for="61d">drive</label>
+					    
+					    <input type="radio" id="61e" name="radioFruit61" value="e" required>
+					    <label for="61e">run</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">62. They do not go ... bus; they walk.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="62a" name="radioFruit62" value="a" required>
+					    <label for="62a">in</label>
+					
+					    <input type="radio" id="62b" name="radioFruit62" value="b" required>
+					    <label for="62b">at</label>
+					
+					    <input type="radio" id="62c" name="radioFruit62" value="c" required>
+					    <label for="62c">with</label>
+					    
+					    <input type="radio" id="62d" name="radioFruit62" value="d" required>
+					    <label for="62d">by</label>
+					    
+					    <input type="radio" id="62e" name="radioFruit62" value="e" required>
+					    <label for="62e">into</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">63. They knocked ... Billy's door and entered.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="63a" name="radioFruit63" value="a" required>
+					    <label for="63a">by</label>
+					
+					    <input type="radio" id="63b" name="radioFruit63" value="b" required>
+					    <label for="63b">at</label>
+					
+					    <input type="radio" id="63c" name="radioFruit63" value="c" required>
+					    <label for="63c">to</label>
+					    
+					    <input type="radio" id="63d" name="radioFruit63" value="d" required>
+					    <label for="63d">in</label>
+					    
+					    <input type="radio" id="63e" name="radioFruit63" value="e" required>
+					    <label for="63e">for</label>      
+					</div>	
+				</div>			
+			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">64. ... is Jack going?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="64a" name="radioFruit64" value="a" required>
+					    <label for="64a">how</label>
+					
+					    <input type="radio" id="64b" name="radioFruit64" value="b" required>
+					    <label for="64b">where</label>
+					
+					    <input type="radio" id="64c" name="radioFruit64" value="c" required>
+					    <label for="64c">who</label>
+					    
+					    <input type="radio" id="64d" name="radioFruit64" value="d" required>
+					    <label for="64d">whom</label> 
+					    
+					    <input type="radio" id="64e" name="radioFruit64" value="e" required>
+					    <label for="64e">what</label>     
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">65. We work ... nine to four o'clock.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="65a" name="radioFruit65" value="a" required>
+					    <label for="65a">at</label>
+					
+					    <input type="radio" id="65b" name="radioFruit65" value="b" required>
+					    <label for="65b">from</label>
+					
+					    <input type="radio" id="65c" name="radioFruit65" value="c" required>
+					    <label for="65c">tp</label>
+					    
+					    <input type="radio" id="65d" name="radioFruit65" value="d" required>
+					    <label for="65d">by</label>
+					    
+					    <input type="radio" id="65e" name="radioFruit65" value="e" required>
+					    <label for="65e">now</label>      
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">66. ... of your school subjects is your favorite?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="66a" name="radioFruit66" value="a" required>
+					    <label for="66a">what</label>
+					
+					    <input type="radio" id="66b" name="radioFruit66" value="b" required>
+					    <label for="66b">whose</label>
+					
+					    <input type="radio" id="66c" name="radioFruit66" value="c" required>
+					    <label for="66c">which</label>
+					    
+					    <input type="radio" id="66d" name="radioFruit66" value="d" required>
+					    <label for="66d">whatever</label>
+					    
+					    <input type="radio" id="66e" name="radioFruit66" value="e" required>
+					    <label for="66e">whichever</label>      
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">67. Is there ... in the basket?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="67a" name="radioFruit67" value="a" required>
+					    <label for="67a">anything</label>
+					
+					    <input type="radio" id="67b" name="radioFruit67" value="b" required>
+					    <label for="67b">someone</label>
+					
+					    <input type="radio" id="67c" name="radioFruit67" value="c" required>
+					    <label for="67c">somebody</label>
+					    
+					    <input type="radio" id="67d" name="radioFruit67" value="d" required>
+					    <label for="67d">nothing</label>
+					    
+					    <input type="radio" id="67e" name="radioFruit67" value="e" required>
+					    <label for="67e">anybody</label>      
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">68. The team has ... the field for half time.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="68a" name="radioFruit68" value="a" required>
+					    <label for="68a">leave</label>
+					
+					    <input type="radio" id="68b" name="radioFruit68" value="b" required>
+					    <label for="68b">left</label>
+					
+					    <input type="radio" id="68c" name="radioFruit68" value="c" required>
+					    <label for="68c">leaving</label>
+					    
+					    <input type="radio" id="68d" name="radioFruit68" value="d" required>
+					    <label for="68d">been left</label>
+					    
+					    <input type="radio" id="68e" name="radioFruit68" value="e" required>
+					    <label for="68e">leaves</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">69. I'm not sure if I ... be able to pay the price.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="69a" name="radioFruit69" value="a" required>
+					    <label for="69a">can</label>
+					
+					    <input type="radio" id="69b" name="radioFruit69" value="b" required>
+					    <label for="69b">will</label>
+					
+					    <input type="radio" id="69c" name="radioFruit69" value="c" required>
+					    <label for="69c">could</label>
+					    
+					    <input type="radio" id="69d" name="radioFruit69" value="d" required>
+					    <label for="69d">may</label>
+					    
+					    <input type="radio" id="69e" name="radioFruit69" value="e" required>
+					    <label for="69e">should</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">70. That is Mrs. Miller ... husband was leader of the winning team.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="70a" name="radioFruit70" value="a" required>
+					    <label for="70a">whose</label>
+					
+					    <input type="radio" id="70b" name="radioFruit70" value="b" required>
+					    <label for="70b">who</label>
+					
+					    <input type="radio" id="70c" name="radioFruit70" value="c" required>
+					    <label for="70c">which</label>
+					    
+					    <input type="radio" id="70d" name="radioFruit70" value="d" required>
+					    <label for="70d">whom</label>
+					    
+					    <input type="radio" id="70e" name="radioFruit70" value="e" required>
+					    <label for="70e">were</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">71. Mary ... just come to see Betty.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="71a" name="radioFruit71" value="a" required>
+					    <label for="71a">was</label>
+					
+					    <input type="radio" id="71b" name="radioFruit71" value="b" required>
+					    <label for="71b">have</label>
+					
+					    <input type="radio" id="71c" name="radioFruit71" value="c" required>
+					    <label for="71c">has</label>
+					    
+					    <input type="radio" id="71d" name="radioFruit71" value="d" required>
+					    <label for="71d">have had</label> 
+					    
+					    <input type="radio" id="71e" name="radioFruit71" value="e" required>
+					    <label for="71e">has had</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">72. Marc Anthony was forced to ... to the Romans.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="72a" name="radioFruit72" value="a" required>
+					    <label for="72a">argue</label>
+					
+					    <input type="radio" id="72b" name="radioFruit72" value="b" required>
+					    <label for="72b">speak</label>
+					
+					    <input type="radio" id="72c" name="radioFruit72" value="c" required>
+					    <label for="72c">tell</label>
+					    
+					    <input type="radio" id="72d" name="radioFruit72" value="d" required>
+					    <label for="72d">say</label> 
+					    
+					    <input type="radio" id="72e" name="radioFruit72" value="e" required>
+					    <label for="72e">discuss</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">73. Jesus ... in Jerusalem<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="73a" name="radioFruit73" value="a" required>
+					    <label for="73a">is died</label>
+					
+					    <input type="radio" id="73b" name="radioFruit73" value="b" required>
+					    <label for="73b">was died</label>
+					
+					    <input type="radio" id="73c" name="radioFruit73" value="c" required>
+					    <label for="73c">died</label>
+					    
+					    <input type="radio" id="73d" name="radioFruit73" value="d" required>
+					    <label for="73d">has been died</label>
+					    
+					    <input type="radio" id="73e" name="radioFruit73" value="e" required>
+					    <label for="73e">has died</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">74. The ship ... some days ago<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="74a" name="radioFruit74" value="a" required>
+					    <label for="74a">sank</label>
+					
+					    <input type="radio" id="74b" name="radioFruit74" value="b" required>
+					    <label for="74b">is sinking</label>
+					
+					    <input type="radio" id="74c" name="radioFruit74" value="c" required>
+					    <label for="74c">has sunk</label>
+					    
+					    <input type="radio" id="74d" name="radioFruit74" value="d" required>
+					    <label for="74d">will sink</label>
+					    
+					    <input type="radio" id="74e" name="radioFruit74" value="e" required>
+					    <label for="74e">was sunken</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">75. Our team has not broken a tie ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="75a" name="radioFruit75" value="a" required>
+					    <label for="75a">for a long time.</label>
+					
+					    <input type="radio" id="75b" name="radioFruit75" value="b" required>
+					    <label for="75b">a long time ago.</label>
+					
+					    <input type="radio" id="75c" name="radioFruit75" value="c" required>
+					    <label for="75c">since a long time.</label>
+					    
+					    <input type="radio" id="75d" name="radioFruit75" value="d" required>
+					    <label for="75d">for long time.</label> 
+					    
+					    <input type="radio" id="75e" name="radioFruit75" value="e" required>
+					    <label for="75e">since long time.</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">76. Last year in the desert then sun ... hard.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="76a" name="radioFruit76" value="a" required>
+					    <label for="76a">shined</label>
+					
+					    <input type="radio" id="76b" name="radioFruit76" value="b" required>
+					    <label for="76b">has been shined</label>
+					
+					    <input type="radio" id="76c" name="radioFruit76" value="c" required>
+					    <label for="76c">has shined</label>
+					    
+					    <input type="radio" id="76d" name="radioFruit76" value="d" required>
+					    <label for="76d">was shined</label>
+					    
+					    <input type="radio" id="76e" name="radioFruit76" value="e" required>
+					    <label for="76e">shines</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">77. Do you remember who ...?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="77a" name="radioFruit77" value="a" required>
+					    <label for="77a">the dish did break</label>
+					
+					    <input type="radio" id="77b" name="radioFruit77" value="b" required>
+					    <label for="77b">did the dish break</label>
+					
+					    <input type="radio" id="77c" name="radioFruit77" value="c" required>
+					    <label for="77c">the dish broke</label>
+					    
+					    <input type="radio" id="77d" name="radioFruit77" value="d" required>
+					    <label for="77d">broke the dish</label>
+					    
+					    <input type="radio" id="77e" name="radioFruit77" value="e" required>
+					    <label for="77e">had broke the dish</label>    
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">78. The policeman asked me where ... tonight.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="78a" name="radioFruit78" value="a" required>
+					    <label for="78a">i will sleep</label>
+					
+					    <input type="radio" id="78b" name="radioFruit78" value="b" required>
+					    <label for="78b">i had slept</label>
+					
+					    <input type="radio" id="78c" name="radioFruit78" value="c" required>
+					    <label for="78c">did i sleep</label>
+					    
+					    <input type="radio" id="78d" name="radioFruit78" value="d" required>
+					    <label for="78d">i slept</label>
+					    
+					    <input type="radio" id="78e" name="radioFruit78" value="e" required>
+					    <label for="78e">sleep i</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">79. It was not possible to sail because the wind ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="79a" name="radioFruit79" value="a" required>
+					    <label for="79a">was stopped.</label>
+					
+					    <input type="radio" id="79b" name="radioFruit79" value="b" required>
+					    <label for="79b">has stopped.</label>
+					
+					    <input type="radio" id="79c" name="radioFruit79" value="c" required>
+					    <label for="79c">is stopping.</label>
+					    
+					    <input type="radio" id="79d" name="radioFruit79" value="d" required>
+					    <label for="79d">will stop.</label>
+					    
+					    <input type="radio" id="79e" name="radioFruit79" value="e" required>
+					    <label for="79e">stopped.</label>   
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">80. I will be back in a few ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="80a" name="radioFruit80" value="a" required>
+					    <label for="80a">minute.</label>
+					
+					    <input type="radio" id="80b" name="radioFruit80" value="b" required>
+					    <label for="80b">minute's time.</label>
+					
+					    <input type="radio" id="80c" name="radioFruit80" value="c" required>
+					    <label for="80c">minute time.</label>
+					    
+					    <input type="radio" id="80d" name="radioFruit80" value="d" required>
+					    <label for="80d">time.</label>
+					    
+					    <input type="radio" id="80e" name="radioFruit80" value="e" required>
+					    <label for="80e">minutes' time.</label>    
+					</div>	
+				</div>	
+					
+			
+				
+			</div>
+			
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-border-dark-grey w3-padding-16">Im n&aumlchsten Teil unserer &Uumlbungen werden Sie mehrere S&aumltze finden, in denen jeweils ein Fehler gemacht wurde.
+					Markieren Sie das Wort, von dem Sie meinen, dass es falsch geschrieben wurde.
+				</span>
+			</div>
+			<div id="part5" style="font-family:Arial;">
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">81. He leaves the car in frunt of the car.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="81a" name="radioFruit81" value="a" required>
+					    <label for="81a">he</label>
+					
+					    <input type="radio" id="81b" name="radioFruit81" value="b" required>
+					    <label for="81b">leaves</label>
+					
+					    <input type="radio" id="81c" name="radioFruit81" value="c" required>
+					    <label for="81c">the</label>
+					    
+					    <input type="radio" id="81d" name="radioFruit81" value="d" required>
+					    <label for="81d">car</label>
+						
+						<input type="radio" id="81e" name="radioFruit81" value="e" required>
+					    <label for="81e">in</label>
+						
+						<input type="radio" id="81f" name="radioFruit81" value="f" required>
+					    <label for="81f">frunt</label>  
+						
+						<input type="radio" id="81g" name="radioFruit81" value="g" required>
+					    <label for="81g">of</label>  
+						
+						<input type="radio" id="81h" name="radioFruit81" value="h" required>
+					    <label for="81h">the</label>  	
+						
+						<input type="radio" id="81i" name="radioFruit81" value="i" required>
+					    <label for="81i">church</label>    												
+					</div>	
+				</div>		
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">82. which is the first letta of the alpabet?<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="82a" name="radioFruit82" value="a" required>
+					    <label for="82a">which</label>
+					
+					    <input type="radio" id="82b" name="radioFruit82" value="b" required>
+					    <label for="82b">is</label>
+					
+					    <input type="radio" id="82c" name="radioFruit82" value="c" required>
+					    <label for="82c">the</label>
+					    
+					    <input type="radio" id="82d" name="radioFruit82" value="d" required>
+					    <label for="82d">first</label>
+						
+						<input type="radio" id="82e" name="radioFruit82" value="e" required>
+					    <label for="82e">letta</label>
+						
+						<input type="radio" id="82f" name="radioFruit82" value="f" required>
+					    <label for="82f">of</label>  
+						
+						<input type="radio" id="82g" name="radioFruit82" value="g" required>
+					    <label for="82g">the</label>  
+						
+						<input type="radio" id="82h" name="radioFruit82" value="h" required>
+					    <label for="82h">alpabet?</label>  													
+					</div>	
+				</div>	
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">83. The sun rise in the east<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="83a" name="radioFruit83" value="a" required>
+					    <label for="83a">The</label>
+					
+					    <input type="radio" id="83b" name="radioFruit83" value="b" required>
+					    <label for="83b">sun</label>
+					
+					    <input type="radio" id="83c" name="radioFruit83" value="c" required>
+					    <label for="83c">rise</label>
+					    
+					    <input type="radio" id="83d" name="radioFruit83" value="d" required>
+					    <label for="83d">in</label>
+						
+						<input type="radio" id="83e" name="radioFruit83" value="e" required>
+					    <label for="83e">the</label>
+						
+						<input type="radio" id="83f" name="radioFruit83" value="f" required>
+					    <label for="83f">east</label>  											
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">84. He said, he had arrive at ten o'clock<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="84a" name="radioFruit84" value="a" required>
+					    <label for="84a">He</label>
+					
+					    <input type="radio" id="84b" name="radioFruit84" value="b" required>
+					    <label for="84b">said,</label>
+					
+					    <input type="radio" id="84c" name="radioFruit84" value="c" required>
+					    <label for="84c">he</label>
+					    
+					    <input type="radio" id="84d" name="radioFruit84" value="d" required>
+					    <label for="84d">had</label>
+						
+						<input type="radio" id="84e" name="radioFruit84" value="e" required>
+					    <label for="84e">arrive</label>
+						
+						<input type="radio" id="84f" name="radioFruit84" value="f" required>
+					    <label for="84f">at</label>  
+						
+						<input type="radio" id="84g" name="radioFruit84" value="g" required>
+					    <label for="84g">ten</label>  
+						
+						<input type="radio" id="84h" name="radioFruit84" value="h" required>
+					    <label for="84h">o'clock</label>  	 												
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">85. Tell me something about the familys who live in your house<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="85a" name="radioFruit85" value="a" required>
+					    <label for="85a">Tell</label>
+					
+					    <input type="radio" id="85b" name="radioFruit85" value="b" required>
+					    <label for="85b">me</label>
+					
+					    <input type="radio" id="85c" name="radioFruit85" value="c" required>
+					    <label for="85c">something</label>
+					    
+					    <input type="radio" id="85d" name="radioFruit85" value="d" required>
+					    <label for="85d">about</label>
+						
+						<input type="radio" id="85e" name="radioFruit85" value="e" required>
+					    <label for="85e">familys</label>
+						
+						<input type="radio" id="85f" name="radioFruit85" value="f" required>
+					    <label for="85f">who</label>  
+						
+						<input type="radio" id="85g" name="radioFruit85" value="g" required>
+					    <label for="85g">live</label>  
+						
+						<input type="radio" id="85h" name="radioFruit85" value="h" required>
+					    <label for="85h">in</label>  	
+						
+						<input type="radio" id="85i" name="radioFruit85" value="i" required>
+					    <label for="85i">your</label>  
+						
+						<input type="radio" id="85j" name="radioFruit85" value="j" required>
+					    <label for="85j">house</label>  											
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">86. It was hard for my mother to beleave that her son became an artist<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="86a" name="radioFruit86" value="a" required>
+					    <label for="86a">It</label>
+					
+					    <input type="radio" id="86b" name="radioFruit86" value="b" required>
+					    <label for="86b">was</label>
+					
+					    <input type="radio" id="86c" name="radioFruit86" value="c" required>
+					    <label for="86c">hard</label>
+					    
+					    <input type="radio" id="86d" name="radioFruit86" value="d" required>
+					    <label for="86d">for</label>
+						
+						<input type="radio" id="86e" name="radioFruit86" value="e" required>
+					    <label for="86e">my</label>
+						
+						<input type="radio" id="86f" name="radioFruit86" value="f" required>
+					    <label for="86f">mother</label>  
+						
+						<input type="radio" id="86g" name="radioFruit86" value="g" required>
+					    <label for="86g">to</label>  
+						
+						<input type="radio" id="86h" name="radioFruit86" value="h" required>
+					    <label for="86h">beleave</label>  	
+						
+						<input type="radio" id="86i" name="radioFruit86" value="i" required>
+					    <label for="86i">her</label>  
+						
+						<input type="radio" id="86j" name="radioFruit86" value="j" required>
+					    <label for="86j">son</label>  
+						
+						<input type="radio" id="86k" name="radioFruit86" value="k" required>
+					    <label for="86k">became</label>  
+						
+						<input type="radio" id="86l" name="radioFruit86" value="l" required>
+					    <label for="86l">an</label>  
+						
+						<input type="radio" id="86m" name="radioFruit86" value="m" required>
+					    <label for="86m">artist</label>											
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">87. Phillip Roth is an very well-known American writer.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="87a" name="radioFruit87" value="a" required>
+					    <label for="87a">Phillip</label>
+					
+					    <input type="radio" id="87b" name="radioFruit87" value="b" required>
+					    <label for="87b">Roth</label>
+					
+					    <input type="radio" id="87c" name="radioFruit87" value="c" required>
+					    <label for="87c">is</label>
+					    
+					    <input type="radio" id="87d" name="radioFruit87" value="d" required>
+					    <label for="87d">an</label>
+						
+						<input type="radio" id="87e" name="radioFruit87" value="e" required>
+					    <label for="87e">very</label>
+						
+						<input type="radio" id="87f" name="radioFruit87" value="f" required>
+					    <label for="87f">well-known</label>  
+						
+						<input type="radio" id="87g" name="radioFruit87" value="g" required>
+					    <label for="87g">American</label>  
+						
+						<input type="radio" id="87h" name="radioFruit87" value="h" required>
+					    <label for="87h">writer</label>  												
+					</div>	
+				</div>		
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">88. For centuries, windmills have been use for pumping water.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="88a" name="radioFruit88" value="a" required>
+					    <label for="88a">For</label>
+					
+					    <input type="radio" id="88b" name="radioFruit88" value="b" required>
+					    <label for="88b">centuries</label>
+					
+					    <input type="radio" id="88c" name="radioFruit88" value="c" required>
+					    <label for="88c">windmills</label>
+					    
+					    <input type="radio" id="88d" name="radioFruit88" value="d" required>
+					    <label for="88d">have</label>
+						
+						<input type="radio" id="88e" name="radioFruit88" value="e" required>
+					    <label for="88e">been</label>
+						
+						<input type="radio" id="88f" name="radioFruit88" value="f" required>
+					    <label for="88f">use</label>  
+						
+						<input type="radio" id="88g" name="radioFruit88" value="g" required>
+					    <label for="88g">for</label>  
+						
+						<input type="radio" id="88h" name="radioFruit88" value="h" required>
+					    <label for="88h">pumping</label>  	
+						
+						<input type="radio" id="88i" name="radioFruit88" value="i" required>
+					    <label for="88i">water</label>   												
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">89. Without knowing the prize we ordered a meal<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="89a" name="radioFruit89" value="a" required>
+					    <label for="89a">Without</label>
+					
+					    <input type="radio" id="89b" name="radioFruit89" value="b" required>
+					    <label for="89b">knowing</label>
+					
+					    <input type="radio" id="89c" name="radioFruit89" value="c" required>
+					    <label for="89c">the</label>
+					    
+					    <input type="radio" id="89d" name="radioFruit89" value="d" required>
+					    <label for="89d">prize</label>
+						
+						<input type="radio" id="89e" name="radioFruit89" value="e" required>
+					    <label for="89e">we</label>
+						
+						<input type="radio" id="89f" name="radioFruit89" value="f" required>
+					    <label for="89f">a</label>  
+						
+						<input type="radio" id="89g" name="radioFruit89" value="g" required>
+					    <label for="89g">meal</label>  										
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">90. We'll get a few cans of bear in the supermarket.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="90a" name="radioFruit90" value="a" required>
+					    <label for="90a">we'll</label>
+					
+					    <input type="radio" id="90b" name="radioFruit90" value="b" required>
+					    <label for="90b">get</label>
+					
+					    <input type="radio" id="90c" name="radioFruit90" value="c" required>
+					    <label for="90c">a</label>
+					    
+					    <input type="radio" id="90d" name="radioFruit90" value="d" required>
+					    <label for="90d">few</label>
+						
+						<input type="radio" id="90e" name="radioFruit90" value="e" required>
+					    <label for="90e">cans</label>
+						
+						<input type="radio" id="90f" name="radioFruit90" value="f" required>
+					    <label for="90f">of</label>  
+						
+						<input type="radio" id="90g" name="radioFruit90" value="g" required>
+					    <label for="90g">bear</label>  
+						
+						<input type="radio" id="90h" name="radioFruit90" value="h" required>
+					    <label for="90h">in</label>  	
+						
+						<input type="radio" id="90i" name="radioFruit90" value="i" required>
+					    <label for="90i">the</label>  
+						
+						<input type="radio" id="90j" name="radioFruit90" value="j" required>
+					    <label for="90j">supermarket</label>    												
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">91. Last winter, we spent our holidays in the mountain.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="91a" name="radioFruit91" value="a" required>
+					    <label for="91a">Last</label>
+					
+					    <input type="radio" id="91b" name="radioFruit91" value="b" required>
+					    <label for="91b">winter</label>
+					
+					    <input type="radio" id="91c" name="radioFruit91" value="c" required>
+					    <label for="91c">we</label>
+					    
+					    <input type="radio" id="91d" name="radioFruit91" value="d" required>
+					    <label for="91d">spent</label>
+						
+						<input type="radio" id="91e" name="radioFruit91" value="e" required>
+					    <label for="91e">our</label>
+						
+						<input type="radio" id="91f" name="radioFruit91" value="f" required>
+					    <label for="91f">holidays</label>  
+						
+						<input type="radio" id="91g" name="radioFruit91" value="g" required>
+					    <label for="91g">in</label>  
+						
+						<input type="radio" id="91h" name="radioFruit91" value="h" required>
+					    <label for="91h">the</label>  	
+						
+						<input type="radio" id="91i" name="radioFruit91" value="i" required>
+					    <label for="91i">mountain</label>    												
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">92. Parking is a terrible problem these day. Wherever you go, it's the same.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="92a" name="radioFruit92" value="a" required>
+					    <label for="92a">Parking</label>
+					
+					    <input type="radio"id="92b" name="radioFruit92" value="b" required>
+					    <label for="92b">is</label>
+					
+					    <input type="radio" id="92c" name="radioFruit92" value="c" required>
+					    <label for="92c">a</label>
+					    
+					    <input type="radio" id="92d" name="radioFruit92" value="d" required>
+					    <label for="92d">terrible</label>
+						
+						<input type="radio" id="92e" name="radioFruit92" value="e" required>
+					    <label for="92e">these</label>
+						
+						<input type="radio" id="92f" name="radioFruit92" value="f" required>
+					    <label for="92f">day</label>  
+						
+						<input type="radio" id="92g" name="radioFruit92" value="g" required>
+					    <label for="92g">Wherever</label>  
+						
+						<input type="radio" id="92h" name="radioFruit92" value="h" required>
+					    <label for="92h">you</label>  	
+						
+						<input type="radio" id="92i" name="radioFruit92" value="i" required>
+					    <label for="92i">go</label>  
+						
+						<input type="radio" id="92j" name="radioFruit92" value="j" required>
+					    <label for="92j">it's</label>  
+						
+						<input type="radio" id="92k" name="radioFruit92" value="k" required>
+					    <label for="92k">the</label>  
+						
+						<input type="radio" id="92l" name="radioFruit92" value="l" required>
+					    <label for="92l">same</label>  						
+					</div>	
+				</div>		
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">93. I'm going to Italy on vacation next sommer<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="93a" name="radioFruit93" value="a" required>
+					    <label for="93a">I'm</label>
+					
+					    <input type="radio" id="93b" name="radioFruit93" value="b" required>
+					    <label for="93b">going</label>
+					
+					    <input type="radio" id="93c" name="radioFruit93" value="c" required>
+					    <label for="93c">to</label>
+					    
+					    <input type="radio" id="93d" name="radioFruit93" value="d" required>
+					    <label for="93d">Italy</label>
+						
+						<input type="radio" id="93e" name="radioFruit93" value="e" required>
+					    <label for="93e">on</label>
+						
+						<input type="radio" id="93f" name="radioFruit93" value="f" required>
+					    <label for="93f">vacation</label>  
+						
+						<input type="radio" id="93g" name="radioFruit93" value="g" required>
+					    <label for="93g">next</label>  
+						
+						<input type="radio" id="93h" name="radioFruit93" value="h" required>
+					    <label for="93h">sommer</label>  	  												
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">94. Tom and Jerry are in the playground with their friends<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="94a" name="radioFruit94" value="a" required>
+					    <label for="94a">Tom</label>
+					
+					    <input type="radio" id="94b" name="radioFruit94" value="b" required>
+					    <label for="94b">and</label>
+					
+					    <input type="radio" id="94c" name="radioFruit94" value="c" required>
+					    <label for="94c">Jerry</label>
+					    
+					    <input type="radio" id="94d" name="radioFruit94" value="d" required>
+					    <label for="94d">are</label>
+						
+						<input type="radio" id="94e" name="radioFruit94" value="e" required>
+					    <label for="94e">in</label>
+						
+						<input type="radio" id="94f" name="radioFruit94" value="f" required>
+					    <label for="94f">the</label>  
+						
+						<input type="radio" id="94g" name="radioFruit94" value="g" required>
+					    <label for="94g">playground</label>  
+						
+						<input type="radio" id="94h" name="radioFruit94" value="h" required>
+					    <label for="94h">their</label>  	
+						
+						<input type="radio" id="94i" name="radioFruit94" value="i" required>
+					    <label for="94i">friends</label>  												
+					</div>	
+				</div>		
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">95. Al Capone was arrested in 1931, accused of tex evasion.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="95a" name="radioFruit95" value="a" required>
+					    <label for="95a">Al</label>
+					
+					    <input type="radio" id="95b" name="radioFruit95" value="b" required>
+					    <label for="95b">Capone</label>
+					
+					    <input type="radio" id="95c" name="radioFruit95" value="c" required>
+					    <label for="95c">was</label>
+					    
+					    <input type="radio" id="95d" name="radioFruit95" value="d" required>
+					    <label for="95d">arrested</label>
+						
+						<input type="radio" id="95e" name="radioFruit95" value="e" required>
+					    <label for="95e">in</label>
+						
+						<input type="radio" id="95f" name="radioFruit95" value="f" required>
+					    <label for="95f">1931</label>  
+						
+						<input type="radio" id="95g" name="radioFruit95" value="g" required>
+					    <label for="95g">accused</label>  
+						
+						<input type="radio" id="95h" name="radioFruit95" value="h" required>
+					    <label for="95h">of</label>  	
+						
+						<input type="radio" id="95i" name="radioFruit95" value="i" required>
+					    <label for="95i">tex</label>
+					    
+					    <input type="radio" id="95j" name="radioFruit95" value="j" required>
+					    <label for="95j">evasion</label>     												
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">96. Mexican have emigrated to Texas in great numbers.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="96a" name="radioFruit96" value="a" required>
+					    <label for="96a">Mexican</label>
+					
+					    <input type="radio" id="96b" name="radioFruit96" value="b" required>
+					    <label for="96b">have</label>
+					
+					    <input type="radio" id="96c" name="radioFruit96" value="c" required>
+					    <label for="96c">emigrated</label>
+					    
+					    <input type="radio" id="96d" name="radioFruit96" value="d" required>
+					    <label for="96d">to</label>
+						
+						<input type="radio" id="96e" name="radioFruit96" value="e" required>
+					    <label for="96e">Texas</label>
+						
+						<input type="radio" id="96f" name="radioFruit96" value="f" required>
+					    <label for="96f">in</label>  
+						
+						<input type="radio" id="96g" name="radioFruit96" value="g" required>
+					    <label for="96g">great</label>  
+						
+						<input type="radio" id="96h" name="radioFruit96" value="h" required>
+					    <label for="96h">numbers</label>  													
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">97. The global distribute of food is quite unequal<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="97a" name="radioFruit97" value="a" required>
+					    <label for="97a">The</label>
+					
+					    <input type="radio" id="97b" name="radioFruit97" value="b" required>
+					    <label for="97b">global</label>
+					
+					    <input type="radio" id="97c" name="radioFruit97" value="c" required>
+					    <label for="97c">distribute</label>
+					    
+					    <input type="radio" id="97d" name="radioFruit97" value="d" required>
+					    <label for="97d">of</label>
+						
+						<input type="radio" id="97e" name="radioFruit97" value="e" required>
+					    <label for="97e">food</label>
+						
+						<input type="radio" id="97f" name="radioFruit97" value="f" required>
+					    <label for="97f">is</label>  
+						
+						<input type="radio" id="97g" name="radioFruit97" value="g" required>
+					    <label for="97g">quite</label>  
+						
+						<input type="radio" id="97h" name="radioFruit97" value="h" required>
+					    <label for="97h">unequal</label>  	 												
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">98. Few people realize that Louisiana once belongs to Spain.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="98a" name="radioFruit98" value="a" required>
+					    <label for="98a">Few</label>
+					
+					    <input type="radio" id="98b" name="radioFruit98" value="b" required>
+					    <label for="98b">people</label>
+					
+					    <input type="radio" id="98c" name="radioFruit98" value="c" required>
+					    <label for="98c">realize</label>
+					    
+					    <input type="radio" id="98d" name="radioFruit98" value="d" required>
+					    <label for="98d">that</label>
+						
+						<input type="radio" id="98e" name="radioFruit98" value="e" required>
+					    <label for="98e">Louisiana</label>
+						
+						<input type="radio" id="98f" name="radioFruit98" value="f" required>
+					    <label for="98f">once</label>  
+						
+						<input type="radio" id="98g" name="radioFruit98" value="g" required>
+					    <label for="98g">belongs</label>  
+						
+						<input type="radio" id="98h" name="radioFruit98" value="h" required>
+					    <label for="98h">to</label>  	
+						
+						<input type="radio" id="98i" name="radioFruit98" value="i" required>
+					    <label for="98i">Spain</label>  												
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">99. The Castle itself was only a ruine<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="99a" name="radioFruit99" value="a" required>
+					    <label for="99a">The</label>
+					
+					    <input type="radio" id="99b" name="radioFruit99" value="b" required>
+					    <label for="99b">Castle</label>
+					
+					    <input type="radio" id="99c" name="radioFruit99" value="c" required>
+					    <label for="99c">itself</label>
+					    
+					    <input type="radio" id="99d" name="radioFruit99" value="d" required>
+					    <label for="99d">was</label>
+						
+						<input type="radio" id="99e" name="radioFruit99" value="e" required>
+					    <label for="99e">a</label>
+						
+						<input type="radio" id="99f" name="radioFruit99" value="f" required>
+					    <label for="99f">ruine</label>  												
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">100. They are proud of having been accepted as legal imigrants.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="100a" name="radioFruit100" value="a" required>
+					    <label for="100a">They</label>
+					
+					    <input type="radio" id="100b" name="radioFruit100" value="b" required>
+					    <label for="100b">are</label>
+					
+					    <input type="radio" id="100c" name="radioFruit100" value="c" required>
+					    <label for="100c">proud</label>
+					    
+					    <input type="radio" id="100d" name="radioFruit100" value="d" required>
+					    <label for="100d">of</label>
+						
+						<input type="radio" id="100e" name="radioFruit100" value="e" required>
+					    <label for="100e">having</label>
+						
+						<input type="radio" id="100f" name="radioFruit100" value="f" required>
+					    <label for="100f">been</label>  
+						
+						<input type="radio" id="100g" name="radioFruit100" value="g" required>
+					    <label for="100g">accepted</label>  
+						
+						<input type="radio" id="100h" name="radioFruit100" value="h" required>
+					    <label for="100h">as</label>  	
+						
+						<input type="radio" id="100i" name="radioFruit100" value="i" required>
+					    <label for="100i">legal</label>  
+						
+						<input type="radio" id="100j" name="radioFruit100" value="j" required>
+					    <label for="100j">imigrants</label>   												
+					</div>	
+				</div>			
+			</div>
+			
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-border-dark-grey w3-padding-16">Sechs W&oumlrter werden Ihnen vorgegeben. Sie sollen die beiden W&oumlrter herausfinden, 
+					f&uumlr die es einen gemeinsamen Oberbegriff gibt.
+				</span>
+			</div>
+			<div id="part6" style="font-family:Arial;">
+								<div>
+					<P style="font-weight: bold; font-size: 20px;">101.<BR>
+					<div class="radio-toolbar" id="q101">
+					    <input type="checkbox" id="101a" name="radioFruit101" value="a" >
+					    <label for="101a">dog</label>
+					
+					    <input type="checkbox" id="101b" name="radioFruit101" value="b" >
+					    <label for="101b">tent</label>
+					
+					    <input type="checkbox" id="101c" name="radioFruit101" value="c" >
+					    <label for="101c">heaven</label>
+					    
+					    <input type="checkbox" id="101d" name="radioFruit101" value="d" >
+					    <label for="101d">stone</label>
+					    
+					    <input type="checkbox" id="101e" name="radioFruit101" value="e" >
+					    <label for="101e">cat</label>
+					    
+					    <input type="checkbox" id="101f" name="radioFruit101" value="f" >
+					    <label for="101f">white</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">102.<BR>
+					<div class="radio-toolbar" id="q102">
+					    <input type="checkbox" id="102a" name="radioFruit102" value="a" >
+					    <label for="102a">spectacles</label>
+					
+					    <input type="checkbox" id="102b" name="radioFruit102" value="b" >
+					    <label for="102b">look</label>
+					
+					    <input type="checkbox" id="102c" name="radioFruit102" value="c" >
+					    <label for="102c">nose</label>
+					    
+					    <input type="checkbox" id="102d" name="radioFruit102" value="d" >
+					    <label for="102d">stimulus</label>
+					    
+					    <input type="checkbox" id="102e" name="radioFruit102" value="e" >
+					    <label for="102e">eye</label>
+					    
+					    <input type="checkbox" id="102f" name="radioFruit102" value="f" >
+					    <label for="102f">flavour</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">103.<BR>
+					<div class="radio-toolbar" id="q103">
+					    <input type="checkbox" id="103a" name="radioFruit103" value="a" >
+					    <label for="103a">house</label>
+					
+					    <input type="checkbox" id="103b" name="radioFruit103" value="b" >
+					    <label for="103b">animal</label>
+					
+					    <input type="checkbox" id="103c" name="radioFruit103" value="c" >
+					    <label for="103c">table</label>
+					    
+					    <input type="checkbox" id="103d" name="radioFruit103" value="d" >
+					    <label for="103d">carpet</label>
+					    
+					    <input type="checkbox" id="103e" name="radioFruit103" value="e" >
+					    <label for="103e">chair</label>
+					    
+					    <input type="checkbox" id="103f" name="radioFruit103" value="f" >
+					    <label for="103f">door</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">104.<BR>
+					<div class="radio-toolbar" id="q104">
+					    <input type="checkbox" id="104a" name="radioFruit104" value="a" >
+					    <label for="104a">sport</label>
+					
+					    <input type="checkbox" id="104b" name="radioFruit104" value="b" >
+					    <label for="104b">people</label>
+					
+					    <input type="checkbox" id="104c" name="radioFruit104" value="c" >
+					    <label for="104c">chemistry</label>
+					    
+					    <input type="checkbox" id="104d" name="radioFruit104" value="d" >
+					    <label for="104d">school</label>
+					    
+					    <input type="checkbox" id="104e" name="radioFruit104" value="e" >
+					    <label for="104e">physics</label>
+					    
+					    <input type="checkbox" id="104f" name="radioFruit104" value="f" >
+					    <label for="104f">music</label>    
+					</div>	
+				</div>
+				<div>																		//start
+					<P style="font-weight: bold; font-size: 20px;">105.<BR>
+					<div class="radio-toolbar" id="q105">
+					    <input type="checkbox" id="105a" name="radioFruit105" value="a" >
+					    <label for="105a">blouse</label>
+					
+					    <input type="checkbox" id="105b" name="radioFruit105" value="b" >
+					    <label for="105b">collar</label>
+					
+					    <input type="checkbox" id="105c" name="radioFruit105" value="c" >
+					    <label for="105c">apartment</label>
+					    
+					    <input type="checkbox" id="105d" name="radioFruit105" value="d" >
+					    <label for="105d">shirt</label>
+					    
+					    <input type="checkbox" id="105e" name="radioFruit105" value="e" >
+					    <label for="105e">dressmaker</label>
+					    
+					    <input type="checkbox" id="105f" name="radioFruit105" value="f" >
+					    <label for="105f">wardrobe</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">106.<BR>
+					<div class="radio-toolbar" id="q107">
+					    <input type="checkbox" id="107a" name="radioFruit107" value="a" >
+					    <label for="107a">board</label>
+					
+					    <input type="checkbox" id="107b" name="radioFruit107" value="b" >
+					    <label for="107b">word</label>
+					
+					    <input type="checkbox" id="107c" name="radioFruit107" value="c" >
+					    <label for="107c">hammer</label>
+					    
+					    <input type="checkbox" id="107d" name="radioFruit107" value="d" >
+					    <label for="107d">metal</label>
+					    
+					    <input type="checkbox" id="107e" name="radioFruit107" value="e" >
+					    <label for="107e">nail</label>
+					    
+					    <input type="checkbox" id="107f" name="radioFruit107" value="f" >
+					    <label for="107f">work</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">107.<BR>
+					<div class="radio-toolbar" id="q108">
+					    <input type="checkbox" id="108a" name="radioFruit108" value="a" >
+					    <label for="108a">bed</label>
+					
+					    <input type="checkbox" id="108b" name="radioFruit108" value="b" >
+					    <label for="108b">bank</label>
+					
+					    <input type="checkbox" id="108c" name="radioFruit108" value="c" >
+					    <label for="108c">night</label>
+					    
+					    <input type="checkbox" id="108d" name="radioFruit108" value="d" >
+					    <label for="108d">snow</label>
+					    
+					    <input type="checkbox" id="108e" name="radioFruit108" value="e" >
+					    <label for="108e">day</label>
+					    
+					    <input type="checkbox" id="108f" name="radioFruit108" value="f" >
+					    <label for="108f">summer</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">108.<BR>
+					<div class="radio-toolbar" id="q109">
+					    <input type="checkbox" id="109a" name="radioFruit109" value="a" >
+					    <label for="109a">poverty</label>
+					
+					    <input type="checkbox" id="109b" name="radioFruit109" value="b" >
+					    <label for="109b">danger</label>
+					
+					    <input type="checkbox" id="109c" name="radioFruit109" value="c" >
+					    <label for="109c">hunger</label>
+					    
+					    <input type="checkbox" id="109d" name="radioFruit109" value="d" >
+					    <label for="109d">disease</label>
+					    
+					    <input type="checkbox" id="109e" name="radioFruit109" value="e" >
+					    <label for="109e">anxiety</label>
+					    
+					    <input type="checkbox" id="109f" name="radioFruit109" value="f" >
+					    <label for="109f">thirst</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">109.<BR>
+					<div class="radio-toolbar" id="q110">
+					    <input type="checkbox" id="110a" name="radioFruit110" value="a" >
+					    <label for="110a">sea</label>
+					
+					    <input type="checkbox" id="110b" name="radioFruit110" value="b" >
+					    <label for="110b">ship</label>
+					
+					    <input type="checkbox" id="110c" name="radioFruit110" value="c" >
+					    <label for="110c">road</label>
+					    
+					    <input type="checkbox" id="110d" name="radioFruit110" value="d" >
+					    <label for="110d">dolphin</label>
+					    
+					    <input type="checkbox" id="110e" name="radioFruit110" value="e" >
+					    <label for="110e">ground</label>
+					    
+					    <input type="checkbox" id="110f" name="radioFruit110" value="f" >
+					    <label for="110f">whale</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">110.<BR>
+					<div class="radio-toolbar" id="q111">
+					    <input type="checkbox" id="111a" name="radioFruit111" value="a" >
+					    <label for="111a">airport</label>
+					
+					    <input type="checkbox" id="111b" name="radioFruit111" value="b" >
+					    <label for="111b">pilot</label>
+					
+					    <input type="checkbox" id="111c" name="radioFruit111" value="c" >
+					    <label for="111c">runway</label>
+					    
+					    <input type="checkbox" id="111d" name="radioFruit111" value="d" >
+					    <label for="111d">luggage</label>
+					    
+					    <input type="checkbox" id="111e" name="radioFruit111" value="e" >
+					    <label for="111e">signal</label>
+					    
+					    <input type="checkbox" id="111f" name="radioFruit111" value="f" >
+					    <label for="111f">driver</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">111.<BR>
+					<div class="radio-toolbar" id="q112">
+					    <input type="checkbox" id="112a" name="radioFruit112" value="a" >
+					    <label for="112a">rabbit</label>
+					
+					    <input type="checkbox" id="112b" name="radioFruit112" value="b" >
+					    <label for="112b">butterfly</label>
+					
+					    <input type="checkbox" id="112c" name="radioFruit112" value="c" >
+					    <label for="112c">turtle</label>
+					    
+					    <input type="checkbox" id="112d" name="radioFruit112" value="d" >
+					    <label for="112d">earthworm</label>
+					    
+					    <input type="checkbox" id="112e" name="radioFruit112" value="e" >
+					    <label for="112e">flamingo</label>
+					    
+					    <input type="checkbox" id="112f" name="radioFruit112" value="f" >
+					    <label for="112f">wolf</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">112.<BR>
+					<div class="radio-toolbar" id="q113">
+					    <input type="checkbox" id="113a" name="radioFruit113" value="a" >
+					    <label for="113a">measure</label>
+					
+					    <input type="checkbox" id="113b" name="radioFruit113" value="b" >
+					    <label for="113b">kilgram</label>
+					
+					    <input type="checkbox" id="113c" name="radioFruit113" value="c" >
+					    <label for="113c">vacuum</label>
+					    
+					    <input type="checkbox" id="113d" name="radioFruit113" value="d" >
+					    <label for="113d">centimetre</label>
+					    
+					    <input type="checkbox" id="113e" name="radioFruit113" value="e" >
+					    <label for="113e">temperature</label>
+					    
+					    <input type="checkbox" id="113f" name="radioFruit113" value="f" >
+					    <label for="113f">distance</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">113.<BR>
+					<div class="radio-toolbar" id="q114">
+					    <input type="checkbox" id="114a" name="radioFruit114" value="a" >
+					    <label for="114a">meal</label>
+					
+					    <input type="checkbox" id="114b" name="radioFruit114" value="b" >
+					    <label for="114b">egg</label>
+					
+					    <input type="checkbox" id="114c" name="radioFruit114" value="c" >
+					    <label for="114c">cup</label>
+					    
+					    <input type="checkbox" id="114d" name="radioFruit114" value="d" >
+					    <label for="114d">dish</label>
+					    
+					    <input type="checkbox" id="114e" name="radioFruit114" value="e" >
+					    <label for="114e">friend</label>
+					    
+					    <input type="checkbox" id="114f" name="radioFruit114" value="f" >
+					    <label for="114f">home</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">114.<BR>
+					<div class="radio-toolbar" id="q115">
+					    <input type="checkbox" id="115a" name="radioFruit115" value="a" >
+					    <label for="115a">fish</label>
+					
+					    <input type="checkbox" id="115b" name="radioFruit115" value="b" >
+					    <label for="115b">harbour</label>
+					
+					    <input type="checkbox" id="115c" name="radioFruit115" value="c" >
+					    <label for="115c">bird</label>
+					    
+					    <input type="checkbox" id="115d" name="radioFruit115" value="d" >
+					    <label for="115d">tide</label>
+					    
+					    <input type="checkbox" id="115e" name="radioFruit115" value="e" >
+					    <label for="115e">beach</label>
+					    
+					    <input type="checkbox" id="115f" name="radioFruit115" value="f" >
+					    <label for="115f">boat</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">115.<BR>
+					<div class="radio-toolbar" id="q116">
+					    <input type="checkbox" id="116a" name="radioFruit116" value="a" >
+					    <label for="116a">street</label>
+					
+					    <input type="checkbox" id="116b" name="radioFruit116" value="b" >
+					    <label for="116b">woman</label>
+					
+					    <input type="checkbox" id="116c" name="radioFruit116" value="c" >
+					    <label for="116c">house</label>
+					    
+					    <input type="checkbox" id="116d" name="radioFruit116" value="d" >
+					    <label for="116d">lane</label>
+					    
+					    <input type="checkbox" id="116e" name="radioFruit116" value="e" >
+					    <label for="116e">yesterday</label>
+					    
+					    <input type="checkbox" id="116f" name="radioFruit116" value="f" >
+					    <label for="116f">lantern</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">116.<BR>
+					<div class="radio-toolbar" id="q117">
+					    <input type="checkbox" id="117a" name="radioFruit117" value="a" >
+					    <label for="117a">cross</label>
+					
+					    <input type="checkbox" id="117b" name="radioFruit117" value="b" >
+					    <label for="117b">chapel</label>
+					
+					    <input type="checkbox" id="117c" name="radioFruit117" value="c" >
+					    <label for="117c">steeple</label>
+					    
+					    <input type="checkbox" id="117d" name="radioFruit117" value="d" >
+					    <label for="117d">altar</label>
+					    
+					    <input type="checkbox" id="117e" name="radioFruit117" value="e" >
+					    <label for="117e">cathedral</label>
+					    
+					    <input type="checkbox" id="117f" name="radioFruit117" value="f" >
+					    <label for="117f">bell</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">117.<BR>
+					<div class="radio-toolbar" id="q106">
+					    <input type="checkbox" id="106a" name="radioFruit106" value="a" >
+					    <label for="106a">to swim</label>
+					
+					    <input type="checkbox" id="106b" name="radioFruit106" value="b" >
+					    <label for="106b">to sleep</label>
+					
+					    <input type="checkbox" id="106c" name="radioFruit106" value="c" >
+					    <label for="106c">to run</label>
+					    
+					    <input type="checkbox" id="106d" name="radioFruit106" value="d" >
+					    <label for="106d">to dream</label>
+					    
+					    <input type="checkbox" id="106e" name="radioFruit106" value="e" >
+					    <label for="106e">to clean</label>
+					    
+					    <input type="checkbox" id="106f" name="radioFruit106" value="f" >
+					    <label for="106f">to dry</label>  
+					</div>	
+				</div>																		//end
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">118.<BR>
+					<div class="radio-toolbar" id="q118">
+					    <input type="checkbox" id="118a" name="radioFruit118" value="a" >
+					    <label for="118a">canister</label>
+					
+					    <input type="checkbox" id="118b" name="radioFruit118" value="b" >
+					    <label for="118b">ashtray</label>
+					
+					    <input type="checkbox" id="118c" name="radioFruit118" value="c" >
+					    <label for="118c">backpack</label>
+					    
+					    <input type="checkbox" id="118d" name="radioFruit118" value="d" >
+					    <label for="118d">garbage can</label>
+					    
+					    <input type="checkbox" id="118e" name="radioFruit118" value="e" >
+					    <label for="118e">vase</label>
+					    
+					    <input type="checkbox" id="118f" name="radioFruit118" value="f" >
+					    <label for="118f">fountain</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">119.<BR>
+					<div class="radio-toolbar" id="q119">
+					    <input type="checkbox" id="119a" name="radioFruit119" value="a" >
+					    <label for="119a">solid</label>
+					
+					    <input type="checkbox" id="119b" name="radioFruit119" value="b" >
+					    <label for="119b">compact</label>
+					
+					    <input type="checkbox" id="119c" name="radioFruit119" value="c" >
+					    <label for="119c">elastic</label>
+					    
+					    <input type="checkbox" id="119d" name="radioFruit119" value="d" >
+					    <label for="119d">round</label>
+					    
+					    <input type="checkbox" id="119e" name="radioFruit119" value="e" >
+					    <label for="119e">warm</label>
+					    
+					    <input type="checkbox" id="119f" name="radioFruit119" value="f" >
+					    <label for="119f">fluid</label>    
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">120.<BR>
+					<div class="radio-toolbar" id="q120">
+					    <input type="checkbox" id="120a" name="radioFruit120" value="a" >
+					    <label for="120a">point</label>
+					
+					    <input type="checkbox" id="120b" name="radioFruit120" value="b" >
+					    <label for="120b">peak</label>
+					
+					    <input type="checkbox" id="120c" name="radioFruit120" value="c" >
+					    <label for="120c">base</label>
+					    
+					    <input type="checkbox" id="120d" name="radioFruit120" value="d" >
+					    <label for="120d">floor</label>
+					    
+					    <input type="checkbox" id="120e" name="radioFruit120" value="e" >
+					    <label for="120e">tower</label>
+					    
+					    <input type="checkbox" id="120f" name="radioFruit120" value="f" >
+					    <label for="120f">street</label>    
+					</div>	
+				</div>																																							
+			</div>
+			
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-border-dark-grey w3-padding-16">Im Folgenden finden Sie unterschiedliche englische W&oumlrter, die Sie ins Deutsche &uumlbersetzen sollen. 
+					Es stehen Ihnen jeweils vier L&oumlsungsm&oumlglichkeiten zur Verf&uumlgung. W&aumlhlen Sie die L&oumlsung aus, welche Ihrer Meinung nach die richtige ist.
+				</span>
+			</div>
+			<div id="part7" style="font-family:Arial;">
+			<div>
+					<P style="font-weight: bold; font-size: 20px;">121. game<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="121a" name="radioFruit121" value="a" required>
+					    <label for="121a">Schmerz</label>
+					
+					    <input type="radio" id="121b" name="radioFruit121" value="b" required>
+					    <label for="121b">Gewinn</label>
+					
+					    <input type="radio" id="121c" name="radioFruit121" value="c" required>
+					    <label for="121c">Spiel</label>
+					    
+					    <input type="radio" id="121d" name="radioFruit121" value="d" required>
+					    <label for="121d">Plan</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">122. key<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="122a" name="radioFruit122" value="a" required>
+					    <label for="122a">Insel</label>
+					
+					    <input type="radio" id="122b" name="radioFruit122" value="b" required>
+					    <label for="122b">Schlüssel</label>
+					
+					    <input type="radio" id="122c" name="radioFruit122" value="c" required>
+					    <label for="122c">Kasten</label>
+					    
+					    <input type="radio" id="122d" name="radioFruit122" value="d" required>
+					    <label for="122d">Kreuz</label>  
+					</div>	
+				</div>		
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">123. shadow:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="123a" name="radioFruit123" value="a" required>
+					    <label for="123a">Schaft</label>
+					
+					    <input type="radio" id="123b" name="radioFruit123" value="b" required>
+					    <label for="123b">Gefahr</label>
+					
+					    <input type="radio" id="123c" name="radioFruit123" value="c" required>
+					    <label for="123c">Dunkel</label>
+					    
+					    <input type="radio" id="123d" name="radioFruit123" value="d" required>
+					    <label for="123d">Schatten</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">124. wheel<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="124a" name="radioFruit124" value="a" required>
+					    <label for="124a">Welle</label>
+					
+					    <input type="radio" id="124b" name="radioFruit124" value="b" required>
+					    <label for="124b">Rad</label>
+					
+					    <input type="radio" id="124c" name="radioFruit124" value="c" required>
+					    <label for="124c">Wind</label>
+					    
+					    <input type="radio" id="124d" name="radioFruit124" value="d" required>
+					    <label for="124d">Fahrer</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">125. stranger<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="125a" name="radioFruit125" value="a" required>
+					    <label for="125a">Strick</label>
+					
+					    <input type="radio" id="125b" name="radioFruit125" value="b" required>
+					    <label for="125b">Cowboy</label>
+					
+					    <input type="radio" id="125c" name="radioFruit125" value="c" required>
+					    <label for="125c">Fremder</label>
+					    
+					    <input type="radio" id="125d" name="radioFruit125" value="d" required>
+					    <label for="125d">Würger</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">126. cancelation<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="126a" name="radioFruit126" value="a" required>
+					    <label for="126a">Kanzler</label>
+					
+					    <input type="radio" id="126b" name="radioFruit126" value="b" required>
+					    <label for="126b">Licht</label>
+					
+					    <input type="radio" id="126c" name="radioFruit126" value="c" required>
+					    <label for="126c">Strafe</label>
+					    
+					    <input type="radio" id="126d" name="radioFruit126" value="d" required>
+					    <label for="126d">Streichung</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">127. clog<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="127a" name="radioFruit127" value="a" required>
+					    <label for="127a">Uhr</label>
+					
+					    <input type="radio" id="127b" name="radioFruit127" value="b" required>
+					    <label for="127b">Holzschuh</label>
+					
+					    <input type="radio" id="127c" name="radioFruit127" value="c" required>
+					    <label for="127c">Schluss</label>
+					    
+					    <input type="radio" id="127d" name="radioFruit127" value="d" required>
+					    <label for="127d">Klappe</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">128. divorce<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="128a" name="radioFruit128" value="a" required>
+					    <label for="128a">Raub</label>
+					
+					    <input type="radio" id="128b" name="radioFruit128" value="b" required>
+					    <label for="128b">Begräbnis</label>
+					
+					    <input type="radio" id="128c" name="radioFruit128" value="c" required>
+					    <label for="128c">Unterschied</label>
+					    
+					    <input type="radio" id="128d" name="radioFruit128" value="d" required>
+					    <label for="128d">Scheidung</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">129. crunch<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="129a" name="radioFruit129" value="a" required>
+					    <label for="129a">Presse</label>
+					
+					    <input type="radio" id="129b" name="radioFruit129" value="b" required>
+					    <label for="129b">Krümel</label>
+					
+					    <input type="radio" id="129c" name="radioFruit129" value="c" required>
+					    <label for="129c">Unfall</label>
+					    
+					    <input type="radio" id="129d" name="radioFruit129" value="d" required>
+					    <label for="129d">Knirschen</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">130. loaf<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="130a" name="radioFruit130" value="a" required>
+					    <label for="130a">Liebe</label>
+					
+					    <input type="radio" id="130b" name="radioFruit130" value="b" required>
+					    <label for="130b">Laster</label>
+					
+					    <input type="radio" id="130c" name="radioFruit130" value="c" required>
+					    <label for="130c">Laib</label>
+					    
+					    <input type="radio" id="130d" name="radioFruit130" value="d" required>
+					    <label for="130d">Lager</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">131. fizzle<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="131a" name="radioFruit131" value="a" required>
+					    <label for="131a">Zischen</label>
+					
+					    <input type="radio" id="131b" name="radioFruit131" value="b" required>
+					    <label for="131b">Flagge</label>
+					
+					    <input type="radio" id="131c" name="radioFruit131" value="c" required>
+					    <label for="131c">Kreisel</label>
+					    
+					    <input type="radio" id="131d" name="radioFruit131" value="d" required>
+					    <label for="131d">Flamme</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">132. toad<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="132a" name="radioFruit132" value="a" required>
+					    <label for="132a">Tanz</label>
+					
+					    <input type="radio" id="132b" name="radioFruit132" value="b" required>
+					    <label for="132b">Kröte</label>
+					
+					    <input type="radio" id="132c" name="radioFruit132" value="c" required>
+					    <label for="132c">Brot</label>
+					    
+					    <input type="radio" id="132d" name="radioFruit132" value="d" required>
+					    <label for="132d">Trost</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">133. yearning<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="133a" name="radioFruit133" value="a" required>
+					    <label for="133a">Schrei</label>
+					
+					    <input type="radio" id="133b" name="radioFruit133" value="b" required>
+					    <label for="133b">Sehnsucht</label>
+					
+					    <input type="radio" id="133c" name="radioFruit133" value="c" required>
+					    <label for="133c">Hefe</label>
+					    
+					    <input type="radio" id="133d" name="radioFruit133" value="d" required>
+					    <label for="133d">Geburtstag</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">134. supply<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="134a" name="radioFruit134" value="a" required>
+					    <label for="134a">Sorte</label>
+					
+					    <input type="radio" id="134b" name="radioFruit134" value="b" required>
+					    <label for="134b">Lieferung</label>
+					
+					    <input type="radio" id="134c" name="radioFruit134" value="c" required>
+					    <label for="134c">Suppe</label>
+					    
+					    <input type="radio" id="134d" name="radioFruit134" value="d" required>
+					    <label for="134d">Unterstützung</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">135. sovereignty<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="135a" name="radioFruit135" value="a" required>
+					    <label for="135a">Regal</label>
+					
+					    <input type="radio" id="135b" name="radioFruit135" value="b" required>
+					    <label for="135b">Königreich</label>
+					
+					    <input type="radio" id="135c" name="radioFruit135" value="c" required>
+					    <label for="135c">Regel</label>
+					    
+					    <input type="radio" id="135d" name="radioFruit135" value="d" required>
+					    <label for="135d">Herrschaft</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">136. manciple<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="136a" name="radioFruit136" value="a" required>
+					    <label for="136a">Mangel</label>
+					
+					    <input type="radio" id="136b" name="radioFruit136" value="b" required>
+					    <label for="136b">Verwalter</label>
+					
+					    <input type="radio" id="136c" name="radioFruit136" value="c" required>
+					    <label for="136c">Lastwagen</label>
+					    
+					    <input type="radio" id="136d" name="radioFruit136" value="d" required>
+					    <label for="136d">Mannschaft</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">137. straw<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="137a" name="radioFruit137" value="a" required>
+					    <label for="137a">Strauch</label>
+					
+					    <input type="radio" id="137b" name="radioFruit137" value="b" required>
+					    <label for="137b">Rasse</label>
+					
+					    <input type="radio" id="137c" name="radioFruit137" value="c" required>
+					    <label for="137c">Blüte</label>
+					    
+					    <input type="radio" id="137d" name="radioFruit137" value="d" required>
+					    <label for="137d">Strohhalm</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">138. flint<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="138a" name="radioFruit138" value="a" required>
+					    <label for="138a">Kies</label>
+					
+					    <input type="radio" id="138b" name="radioFruit138" value="b" required>
+					    <label for="138b">Feuer</label>
+					
+					    <input type="radio" id="138c" name="radioFruit138" value="c" required>
+					    <label for="138c">Steinzeit</label>
+					    
+					    <input type="radio" id="138d" name="radioFruit138" value="d" required>
+					    <label for="138d">Gewehr</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">139. strait<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="139a" name="radioFruit139" value="a" required>
+					    <label for="139a">Engpass</label>
+					
+					    <input type="radio" id="139b" name="radioFruit139" value="b" required>
+					    <label for="139b">Linie</label>
+					
+					    <input type="radio" id="139c" name="radioFruit139" value="c" required>
+					    <label for="139c">Schlitz</label>
+					    
+					    <input type="radio" id="139d" name="radioFruit139" value="d" required>
+					    <label for="139d">Strafe</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">140. concurrence<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="140a" name="radioFruit140" value="a" required>
+					    <label for="140a">Rennen</label>
+					
+					    <input type="radio" id="140b" name="radioFruit140" value="b" required>
+					    <label for="140b">Konflikt</label>
+					
+					    <input type="radio" id="140c" name="radioFruit140" value="c" required>
+					    <label for="140c">Konkurrenz</label>
+					    
+					    <input type="radio" id="140d" name="radioFruit140" value="d" required>
+					    <label for="140d">Zusammentreffen</label>  
+					</div>	
+				</div>				
+			</div>
+			
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-border-dark-grey w3-padding-16">Im Folgenden finden Sie, wie in einer der ersten Aufgaben, mehrere unterschiedliche W&oumlrter, von denen jeweils eines in einen der 
+					n&aumlchsten S&aumltze passt. Ordnen Sie wiederum diese W&oumlrter zu. Es stehen Ihnen jeweils vier L&oumlsungsm&oumlglichkeiten zur Verf&uumlgung. W&aumlhlen Sie die L&oumlsung, welche Ihrer Meinung nach die richtige ist.
+				</span>
+			</div>
+			<div id="part8" style="font-family:Arial;">
+			<div>
+					<P style="font-weight: bold; font-size: 20px;">141. Madonna is a ... person<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="141a" name="radioFruit141" value="a" required>
+					    <label for="141a">fame</label>
+					
+					    <input type="radio" id="141b" name="radioFruit141" value="b" required>
+					    <label for="141b">famely</label>
+					
+					    <input type="radio" id="141c" name="radioFruit141" value="c" required>
+					    <label for="141c">famous</label>
+					    
+					    <input type="radio" id="141d" name="radioFruit141" value="d" required>
+					    <label for="141d">faming</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">142. The fire has destroyed the forest ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="142a" name="radioFruit142" value="a" required>
+					    <label for="142a">complete</label>
+					
+					    <input type="radio" id="142b" name="radioFruit142" value="b" required>
+					    <label for="142b">completely</label>
+					
+					    <input type="radio" id="142c" name="radioFruit142" value="c" required>
+					    <label for="142c">completious</label>
+					    
+					    <input type="radio" id="142d" name="radioFruit142" value="d" required>
+					    <label for="142d">completing</label>  
+					</div>	
+				</div>		
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">143. A lion is a ... animal.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="143a" name="radioFruit143" value="a" required>
+					    <label for="143a">danger</label>
+					
+					    <input type="radio" id="143b" name="radioFruit143" value="b" required>
+					    <label for="143b">dangerly</label>
+					
+					    <input type="radio" id="143c" name="radioFruit143" value="c" required>
+					    <label for="143c">dangerous</label>
+					    
+					    <input type="radio" id="143d" name="radioFruit143" value="d" required>
+					    <label for="143d">dangering</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">144. The survivor of the shipwreck were ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="144a" name="radioFruit144" value="a" required>
+					    <label for="144a">hungry</label>
+					
+					    <input type="radio" id="144b" name="radioFruit144" value="b" required>
+					    <label for="144b">hungrily</label>
+					
+					    <input type="radio" id="144c" name="radioFruit144" value="c" required>
+					    <label for="144c">hungrious</label>
+					    
+					    <input type="radio" id="144d" name="radioFruit144" value="d" required>
+					    <label for="144d">hungering</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">145. The dinner was ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="145a" name="radioFruit145" value="a" required>
+					    <label for="145a">tomb</label>
+					
+					    <input type="radio" id="145b" name="radioFruit145" value="b" required>
+					    <label for="145b">letter</label>
+					
+					    <input type="radio" id="145c" name="radioFruit145" value="c" required>
+					    <label for="145c">bridge</label>
+					    
+					    <input type="radio" id="145d" name="radioFruit145" value="d" required>
+					    <label for="145d">parcel</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">146. The car was driving ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="146a" name="radioFruit146" value="a" required>
+					    <label for="146a">slow</label>
+					
+					    <input type="radio" id="146b" name="radioFruit146" value="b" required>
+					    <label for="146b">slowly</label>
+					
+					    <input type="radio" id="146c" name="radioFruit146" value="c" required>
+					    <label for="146c">slowous</label>
+					    
+					    <input type="radio" id="146d" name="radioFruit146" value="d" required>
+					    <label for="146d">slowing</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">147. My ... sister is going to be 25 in May.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="147a" name="radioFruit147" value="a" required>
+					    <label for="147a">elder</label>
+					
+					    <input type="radio" id="147b" name="radioFruit147" value="b" required>
+					    <label for="147b">elderly</label>
+					
+					    <input type="radio" id="147c" name="radioFruit147" value="c" required>
+					    <label for="147c">elderious</label>
+					    
+					    <input type="radio" id="147d" name="radioFruit147" value="d" required>
+					    <label for="147d">eldering</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">148. The kids were singing ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="148a" name="radioFruit148" value="a" required>
+					    <label for="148a">happy</label>
+					
+					    <input type="radio" id="148b" name="radioFruit148" value="b" required>
+					    <label for="148b">happily</label>
+					
+					    <input type="radio" id="148c" name="radioFruit148" value="c" required>
+					    <label for="148c">happious</label>
+					    
+					    <input type="radio" id="148d" name="radioFruit148" value="d" required>
+					    <label for="148d">happying</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">149. Coca Cola is a ... drink.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="149a" name="radioFruit149" value="a" required>
+					    <label for="149a">light</label>
+					
+					    <input type="radio" id="149b" name="radioFruit149" value="b" required>
+					    <label for="149b">lightly</label>
+					
+					    <input type="radio" id="149c" name="radioFruit149" value="c" required>
+					    <label for="149c">lightious</label>
+					    
+					    <input type="radio" id="149d" name="radioFruit149" value="d" required>
+					    <label for="149d">lighting</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">150. My sister loves ... clothes.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="150a" name="radioFruit150" value="a" required>
+					    <label for="150a">stylish</label>
+					
+					    <input type="radio" id="150b" name="radioFruit150" value="b" required>
+					    <label for="150b">stylishly</label>
+					
+					    <input type="radio" id="150c" name="radioFruit150" value="c" required>
+					    <label for="150c">stylous</label>
+					    
+					    <input type="radio" id="150d" name="radioFruit150" value="d" required>
+					    <label for="150d">styling</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">151. The choir sang ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="151a" name="radioFruit151" value="a" required>
+					    <label for="151a">loud</label>
+					
+					    <input type="radio" id="151b" name="radioFruit151" value="b" required>
+					    <label for="151b">loudly</label>
+					
+					    <input type="radio" id="151c" name="radioFruit151" value="c" required>
+					    <label for="151c">loudious</label>
+					    
+					    <input type="radio" id="151d" name="radioFruit151" value="d" required>
+					    <label for="151d">loudening</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">152. Influenza is a ... dissease<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="152a" name="radioFruit152" value="a" required>
+					    <label for="152a">contage</label>
+					
+					    <input type="radio" id="152b" name="radioFruit152" value="b" required>
+					    <label for="152b">contagily</label>
+					
+					    <input type="radio" id="152c" name="radioFruit152" value="c" required>
+					    <label for="152c">contagious</label>
+					    
+					    <input type="radio" id="152d" name="radioFruit152" value="d" required>
+					    <label for="152d">contaging</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">153. Popstarts usually dress ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="153a" name="radioFruit153" value="a" required>
+					    <label for="153a">flash</label>
+					
+					    <input type="radio" id="153b" name="radioFruit153" value="b" required>
+					    <label for="153b">flashily</label>
+					
+					    <input type="radio" id="153c" name="radioFruit153" value="c" required>
+					    <label for="153c">flashous</label>
+					    
+					    <input type="radio" id="153d" name="radioFruit153" value="d" required>
+					    <label for="153d">flashing</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">154. Jane, my classmate, is very ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="154a" name="radioFruit154" value="a" required>
+					    <label for="154a">study</label>
+					
+					    <input type="radio" id="154b" name="radioFruit154" value="b" required>
+					    <label for="154b">studily</label>
+					
+					    <input type="radio" id="154c" name="radioFruit154" value="c" required>
+					    <label for="154c">studious</label>
+					    
+					    <input type="radio" id="154d" name="radioFruit154" value="d" required>
+					    <label for="154d">studying</label>  
+					</div>	
+				</div>			
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">155. He was in a life-... situation<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="155a" name="radioFruit155" value="a" required>
+					    <label for="155a">threat</label>
+					
+					    <input type="radio" id="155b" name="radioFruit155" value="b" required>
+					    <label for="155b">threatly</label>
+					
+					    <input type="radio" id="155c" name="radioFruit155" value="c" required>
+					    <label for="155c">threatuous</label>
+					    
+					    <input type="radio" id="155d" name="radioFruit155" value="d" required>
+					    <label for="155d">threatening</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">156. John has ... imagination<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="156a" name="radioFruit156" value="a" required>
+					    <label for="156a">vivid</label>
+					
+					    <input type="radio" id="156b" name="radioFruit156" value="b" required>
+					    <label for="156b">vividly</label>
+					
+					    <input type="radio" id="156c" name="radioFruit156" value="c" required>
+					    <label for="156c">vividous</label>
+					    
+					    <input type="radio" id="156d" name="radioFruit156" value="d" required>
+					    <label for="156d">vividing</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">157. Thats is an ... sight<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="157a" name="radioFruit157" value="a" required>
+					    <label for="157a">astonish</label>
+					
+					    <input type="radio" id="157b" name="radioFruit157" value="b" required>
+					    <label for="157b">astonishly</label>
+					
+					    <input type="radio" id="157c" name="radioFruit157" value="c" required>
+					    <label for="157c">astonishous</label>
+					    
+					    <input type="radio" id="157d" name="radioFruit157" value="d" required>
+					    <label for="157d">astonishing</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">158. The train runs fairly ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="158a" name="radioFruit158" value="a" required>
+					    <label for="158a">regular</label>
+					
+					    <input type="radio" id="158b" name="radioFruit158" value="b" required>
+					    <label for="158b">regularly</label>
+					
+					    <input type="radio" id="158c" name="radioFruit158" value="c" required>
+					    <label for="158c">regulious</label>
+					    
+					    <input type="radio" id="158d" name="radioFruit158" value="d" required>
+					    <label for="158d">regulalating</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">159. The new dress looked ... on Julie.<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="159a" name="radioFruit159" value="a" required>
+					    <label for="159a">flatter</label>
+					
+					    <input type="radio" id="159b" name="radioFruit159" value="b" required>
+					    <label for="159b">flatterly</label>
+					
+					    <input type="radio" id="159c" name="radioFruit159" value="c" required>
+					    <label for="159c">flatterious</label>
+					    
+					    <input type="radio" id="159d" name="radioFruit159" value="d" required>
+					    <label for="159d">flattering</label>  
+					</div>	
+				</div>
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">160. The cake is extremely ...<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="160a" name="radioFruit160" value="a" required>
+					    <label for="160a">tempt</label>
+					
+					    <input type="radio" id="160b" name="radioFruit160" value="b" required>
+					    <label for="160b">temptly</label>
+					
+					    <input type="radio" id="160c" name="radioFruit160" value="c" required>
+					    <label for="160c">temptious</label>
+					    
+					    <input type="radio" id="160d" name="radioFruit160" value="d" required>
+					    <label for="160d">tempting</label>  
+					</div>	
+				</div>	
+			</div>
+			
+			
+					
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Um zu beenden, bitte alles ausf&uumlllen. Vielen Dank!</span>
+			</div>
+			
+			<button type="submit" class="w3-button w3-block w3-black">Beenden</button>
+			
+		</form>	
+	</div>
+</body>
+</html>

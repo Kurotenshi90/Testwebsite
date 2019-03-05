@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: springBoot
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: Peter-Pauk
+Implementation-Vendor-Id: com.personinfo
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/springBoot
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>testlyn</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="css/test2.css">
+<script type="text/javascript" src="javascript/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="javascript/DataService.js"></script>
+<script type="text/javascript">
+$(document).on('submit', '#myform', function(e) {
+	e.preventDefault();
+	function getvalue(input){
+		var string = '';
+	   $("#"+input+" input[type=radio]:checked").each(function() {
+	       var value = $(this).val();
+		   string = string + value + ",";
+	   });
+	   return string;
+	};
+	var test = getvalue("part1").slice(0,-1);
+	alert(test);
+});
+
+</script>
+</head>
+<body onload="">
+	<!-- Content -->
+	<div class="w3-content"
+		style="max-width: 1100px; margin-top: 80px; margin-bottom: 80px">
+		<form id="myform" class="w3-container" target="_blank">
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">I am so smart my name is mao</span>
+			</div>
+			<div id="part1" style="font-family:Arial;">
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">1.  Fenster:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="1a" name="radioFruit" value="a" >
+					    <label for="1a">car</label>
+					
+					    <input type="radio" id="1b" name="radioFruit" value="b">
+					    <label for="1b">chat</label>
+					
+					    <input type="radio" id="1c" name="radioFruit" value="c">
+					    <label for="1c">window</label>
+					    
+					    <input type="radio" id="1d" name="radioFruit" value="d">
+					    <label for="1d">house</label>  
+					</div>	
+				</div>
+				
+				<div>
+					<P style="font-weight: bold; font-size: 20px;">1.  Fenster:<BR>
+					<div class="radio-toolbar">
+					    <input type="radio" id="1a" name="radioFruit" value="a" >
+					    <label for="1a">car</label>
+					
+					    <input type="radio" id="1b" name="radioFruit" value="b">
+					    <label for="1b">chat</label>
+					
+					    <input type="radio" id="1c" name="radioFruit" value="c">
+					    <label for="1c">window</label>
+					    
+					    <input type="radio" id="1d" name="radioFruit" value="d">
+					    <label for="1d">house</label>  
+					</div>	
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				<P style="font-weight: bold">1. Fenster:<BR>
+				<div>
+					<input type="radio" name="1" value="a" required>car<BR>
+					<input type="radio" name="1" value="b" required>chat<BR>
+					<input type="radio" name="1" value="c" required>window<BR>
+					<input type="radio" name="1" value="d" required>house<BR>
+				</div>
+				
+				
+				<P style="font-weight: bold">2. Lied:<BR>
+				<div>
+					<input type="radio" name="2" value="a" required>air<BR>
+					<input type="radio" name="2" value="b" required>note<BR>
+					<input type="radio" name="2" value="c" required>song<BR>
+					<input type="radio" name="2" value="d" required>music<BR>
+				</div>
+				
+				<P style="font-weight: bold">3. Vogel:<BR>
+				<div>
+					<input type="radio" name="3" value="a" required>tree<BR>
+					<input type="radio" name="3" value="b" required>bird<BR>
+					<input type="radio" name="3" value="c" required>room<BR>
+					<input type="radio" name="3" value="d" required>book<BR>
+				</div>
+				
+				<P style="font-weight: bold">4. Loch:<BR>
+				<div>
+					<input type="radio" name="4" value="a" required>chair<BR>
+					<input type="radio" name="4" value="b" required>box<BR>
+					<input type="radio" name="4" value="c" required>stick<BR>
+					<input type="radio" name="4" value="d" required>hole<BR>
+				</div>
+				
+				<P style="font-weight: bold">5. Stern:<BR>
+				<div>
+					<input type="radio" name="5" value="a" required>light<BR>
+					<input type="radio" name="5" value="b" required>star<BR>
+					<input type="radio" name="5" value="c" required>bridge<BR>
+					<input type="radio" name="5" value="d" required>heaven<BR>
+				</div>
+				
+				<P style="font-weight: bold">6. Hochzeit:<BR>
+				<div>
+					<input type="radio" name="6" value="a" required>wedding<BR>
+					<input type="radio" name="6" value="b" required>meeting<BR>
+					<input type="radio" name="6" value="c" required>funeral<BR>
+					<input type="radio" name="6" value="d" required>gratulation<BR>
+				</div>
+				
+				<P style="font-weight: bold">7. Fahrt:<BR>
+				<div>
+					<input type="radio" name="7" value="a" required>stall<BR>
+					<input type="radio" name="7" value="b" required>ride<BR>
+					<input type="radio" name="7" value="c" required>ferry<BR>
+					<input type="radio" name="7" value="d" required>sink<BR>
+				</div>
+				
+				<P style="font-weight: bold">8. Roller:<BR>
+				<div>
+					<input type="radio" name="8" value="a" required>rule<BR>
+					<input type="radio" name="8" value="b" required>scooter<BR>
+					<input type="radio" name="8" value="c" required>rolling<BR>
+					<input type="radio" name="8" value="d" required>riddle<BR>
+					
+				</div>
+				
+				<P style="font-weight: bold">9. Reifen:<BR>
+				<div>
+					<input type="radio" name="9" value="a" required>tire<BR>
+					<input type="radio" name="9" value="b" required>hose<BR>
+					<input type="radio" name="9" value="c" required>cap<BR>
+					<input type="radio" name="9" value="d" required>cord<BR>
+				</div>
+				
+				<P style="font-weight: bold">10. Paket:<BR>
+				<div>
+					<input type="radio" name="10" value="a" required>tomb<BR>
+					<input type="radio" name="10" value="b" required>letter<BR>
+					<input type="radio" name="10" value="c" required>bridge<BR>
+					<input type="radio" name="10" value="d" required>parcel<BR>
+				</div>
+				
+				<P style="font-weight: bold">11. Schuld:<BR>
+				<div>
+					<input type="radio" name="11" value="a" required>guilt<BR>
+					<input type="radio" name="11" value="b" required>fowl<BR>
+					<input type="radio" name="11" value="c" required>denote<BR>
+					<input type="radio" name="11" value="d" required>foul<BR>
+				</div>
+				
+				<P style="font-weight: bold">12. Fleck:<BR>
+				<div>
+					<input type="radio" name="12" value="a" required>crash<BR>
+					<input type="radio" name="12" value="b" required>pain<BR>
+					<input type="radio" name="12" value="c" required>spot<BR>
+					<input type="radio" name="12" value="d" required>stamp<BR>
+				</div>
+				
+				<P style="font-weight: bold">13. Decke:<BR>
+				<div>
+					<input type="radio" name="13" value="a" required>blank<BR>
+					<input type="radio" name="13" value="b" required>decode<BR>
+					<input type="radio" name="13" value="c" required>deck<BR>
+					<input type="radio" name="13" value="d" required>blanket<BR>
+				</div>
+				
+				<P style="font-weight: bold">14. Hütte:<BR>
+				<div>
+					<input type="radio" name="14" value="a" required>hood<BR>
+					<input type="radio" name="14" value="b" required>ground<BR>
+					<input type="radio" name="14" value="c" required>cottage<BR>
+					<input type="radio" name="14" value="d" required>stable<BR>
+				</div>
+				
+				<P style="font-weight: bold">15. Schurke:<BR>
+				<div>
+					<input type="radio" name="15" value="a" required>scoundrel<BR>
+					<input type="radio" name="15" value="b" required>scan<BR>
+					<input type="radio" name="15" value="c" required>scape<BR>
+					<input type="radio" name="15" value="d" required>scale<BR>
+				</div>
+				
+				<P style="font-weight: bold">16. Schlange:<BR>
+				<div>
+					<input type="radio" name="16" value="a" required>queen<BR>
+					<input type="radio" name="16" value="b" required>queue<BR>
+					<input type="radio" name="16" value="c" required>quest<BR>
+					<input type="radio" name="16" value="d" required>quench<BR>
+				</div>
+				
+				<P style="font-weight: bold">17. Pflug:<BR>
+				<div>
+					<input type="radio" name="17" value="a" required>flog<BR>
+					<input type="radio" name="17" value="b" required>plump<BR>
+					<input type="radio" name="17" value="c" required>flock<BR>
+					<input type="radio" name="17" value="d" required>plough<BR>
+				</div>
+				
+				<P style="font-weight: bold">18. Versand:<BR>
+				<div>
+					<input type="radio" name="18" value="a" required>sander<BR>
+					<input type="radio" name="18" value="b" required>versant<BR>
+					<input type="radio" name="18" value="c" required>dispatch<BR>
+					<input type="radio" name="18" value="d" required>sender<BR>
+				</div>
+				
+				<P style="font-weight: bold">19. Stoß:<BR>
+				<div>
+					<input type="radio" name="19" value="a" required>staff<BR>
+					<input type="radio" name="19" value="b" required>shove<BR>
+					<input type="radio" name="19" value="c" required>stoup<BR>
+					<input type="radio" name="19" value="d" required>jet<BR>
+				</div>
+				
+				<P style="font-weight: bold">20. Verschmelzung:<BR>
+				<div>
+					<input type="radio" name="20" value="a" required>zipper<BR>
+					<input type="radio" name="20" value="b" required>merger<BR>
+					<input type="radio" name="20" value="c" required>smelting<BR>
+					<input type="radio" name="20" value="d" required>connection<BR>
+				</div>
+			</div>
+			
+			
+			
+			
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">I am so smart my name is mao</span>
+			</div>
+			<div id="part2">
+				<P style="font-weight: bold">1. Fenster:<BR>
+				<div>
+					<input type="radio" name="21" value="a" required>car<BR>
+					<input type="radio" name="21" value="b" required>chat<BR>
+					<input type="radio" name="21" value="c" required>window<BR>
+					<input type="radio" name="21" value="d" required>house<BR>
+				</div>
+				
+			</div>
+			
+			
+			
+			
+			
+			<div  class="w3-center w3-padding-64" id="contact">
+				<span
+					class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Thank you for filling in the test press send when ready</span>
+			</div>
+			
+			<button type="submit" class="w3-button w3-block w3-black">Send</button>
+			
+		</form>	
+	</div>
+</body>
+</html>
